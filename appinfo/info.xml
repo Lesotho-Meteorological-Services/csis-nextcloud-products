@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<info>
+  <id>csis_products</id>
+  <name>CSIS Products</name>
+  <summary>Add CSIS product creation options to the Files New menu</summary>
+  <description>Creates weather, agromet, and climate product docs from templates and opens them in ONLYOFFICE.</description>
+  <version>1.0.10</version>
+  <licence>agpl</licence>
+  <namespace>CSISProducts</namespace>
+  <types>
+    <filesystem/>
+  </types>
+
+  <dependencies>
+    <nextcloud min-version="31" max-version="33"/>
+  </dependencies>
+</info>

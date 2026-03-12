@@ -1,0 +1,19 @@
+{
+  "name": "csis_products",
+  "private": true,
+  "scripts": {
+    "build": "webpack --node-env production",
+    "dev": "webpack --node-env development",
+    "watch": "webpack --node-env development --watch"
+  },
+  "dependencies": {
+    "@nextcloud/files": "^3.0.0",
+    "@nextcloud/dialogs": "^7.0.0",
+    "@nextcloud/axios": "^2.0.0"
+  },
+  "devDependencies": {
+    "@nextcloud/webpack-vue-config": "^7.0.0",
+    "webpack": "^5.0.0",
+    "webpack-cli": "^6.0.1"
+  }
+}
