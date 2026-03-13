@@ -10,7 +10,7 @@ const AGROMET_ENTRY_ID = 'csis-agromet-product'
 const CLIMATE_ENTRY_ID = 'csis-climate-product'
 const CUSTOM_ENTRY_IDS = new Set([WEATHER_ENTRY_ID, AGROMET_ENTRY_ID, CLIMATE_ENTRY_ID])
 const MENU_ICON = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" aria-hidden="true">
-	<image href="${generateFilePath('csis_products', 'img', 'forecast.ico')}" x="2" y="2" width="16" height="16" preserveAspectRatio="xMidYMid meet" />
+	<image href="${generateFilePath('csis_products', 'img', 'new-docx.svg')}" x="2" y="2" width="16" height="16" preserveAspectRatio="xMidYMid meet" />
 </svg>`
 
 async function createForecast(dir, type) {
