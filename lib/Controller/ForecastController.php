@@ -35,7 +35,7 @@ class ForecastController extends Controller {
         //     return new DataResponse(['message' => 'Not allowed'], 403);
         // }
 
-        $allowed = ['daily', 'weekly', 'seasonal', 'agromet_dekadal', 'agromet_monthly', 'climate_seasonal_forecast', 'climate_seasonal_ncof_report'];
+        $allowed = ['morning', 'two_day', 'weekly', 'agromet_dekadal', 'agromet_monthly', 'climate_seasonal', 'climate_ncof_report'];
         if (!in_array($type, $allowed, true)) {
             return new DataResponse(['message' => 'Invalid type'], 400);
         }
@@ -44,13 +44,13 @@ class ForecastController extends Controller {
 
         [$templateCandidates, $nameBase] = match ($type) {
             // Match current on-disk template names first, with generic fallbacks.
-            'daily' => [['722C_Morning Forecast.docx', 'daily_forecast.docx'], 'Daily_Forecast_' . $now->format('Y-m-d')],
+            'morning' => [['722C_Morning Forecast.docx', 'daily_forecast.docx'], 'Morning_Forecast_' . $now->format('Y-m-d')],
+            'two_day' => [['722A_Two Day Forecast.docx', 'two_day_forecast.docx'], 'Two_Day_Forecast_' . $now->format('Y-m-d')],
             'weekly' => [['723_Weekly Forecast.docx', 'weekly_forecast.docx'], 'Weekly_Forecast_' . $now->format('o-\WW')],
-            'seasonal' => [['722A_Two Day Forecast.docx', 'seasonal_forecast.docx'], 'Seasonal_Forecast_' . $this->seasonLabel($now)],
             'agromet_dekadal' => [['Agromet_Dekadal.docx', 'agromet_dekadal.docx'], 'Agromet_Dekadal_' . $this->dekadLabel($now)],
             'agromet_monthly' => [['Agromet_Monthly.docx', 'agromet_monthly.docx'], 'Agromet_Monthly_' . $now->format('Y-m')],
-            'climate_seasonal_forecast' => [['Climate_Seasonal_Forecast.docx', 'climate_seasonal_forecast.docx'], 'Climate_Seasonal_Forecast_' . $this->seasonLabel($now)],
-            'climate_seasonal_ncof_report' => [['Climate_Seasonal_NCOF_Report.docx', 'climate_seasonal_ncof_report.docx'], 'Climate_Seasonal_NCOF_Report_' . $this->seasonLabel($now)],
+            'climate_seasonal' => [['Climate_Seasonal_Forecast.docx', 'climate_seasonal_forecast.docx'], 'Climate_Seasonal_Forecast_' . $this->seasonLabel($now)],
+            'climate_ncof_report' => [['Climate_Seasonal_Forecast.docx', 'climate_seasonal_forecast.docx'], 'Climate_NCOF_Report_' . $this->seasonLabel($now)],
         };
 
         $uid = $user->getUID();

@@ -9,8 +9,14 @@ const WEATHER_ENTRY_ID = 'csis-weather-product'
 const AGROMET_ENTRY_ID = 'csis-agromet-product'
 const CLIMATE_ENTRY_ID = 'csis-climate-product'
 const CUSTOM_ENTRY_IDS = new Set([WEATHER_ENTRY_ID, AGROMET_ENTRY_ID, CLIMATE_ENTRY_ID])
-const MENU_ICON = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" aria-hidden="true">
-	<image href="${generateFilePath('csis_products', 'img', 'new-docx.svg')}" x="2" y="2" width="16" height="16" preserveAspectRatio="xMidYMid meet" />
+const WEATHER_MENU_ICON = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" aria-hidden="true">
+	<image href="${generateFilePath('csis_products', 'img', 'new-weather-product.svg')}" x="0" y="0" width="30" height="30" preserveAspectRatio="xMidYMid meet" />
+</svg>`
+const AGROMET_MENU_ICON = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" aria-hidden="true">
+	<image href="${generateFilePath('csis_products', 'img', 'new-agromet-product.svg')}" x="0" y="0" width="30" height="30" preserveAspectRatio="xMidYMid meet" />
+</svg>`
+const CLIMATE_MENU_ICON = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" aria-hidden="true">
+	<image href="${generateFilePath('csis_products', 'img', 'new-climate-product.svg')}" x="0" y="0" width="30" height="30" preserveAspectRatio="xMidYMid meet" />
 </svg>`
 
 async function createForecast(dir, type) {
@@ -28,12 +34,13 @@ function buildEntry({
 	displayName,
 	dialogTitle,
 	dialogText,
+	iconSvgInline,
 	buttons,
 }) {
 	return {
 		id,
 		displayName: t('csis_products', displayName),
-		iconSvgInline: MENU_ICON,
+		iconSvgInline,
 		order: -1,
 
 		// Show only where user can create files.
@@ -93,10 +100,11 @@ function registerEntries() {
 			displayName: 'New weather product',
 			dialogTitle: 'Create weather product',
 			dialogText: 'Choose the weather product type to create.',
+			iconSvgInline: WEATHER_MENU_ICON,
 			buttons: [
-				{ label: 'Daily', type: 'daily', errorMessage: 'Failed to create daily forecast' },
+				{ label: 'Morning', type: 'morning', errorMessage: 'Failed to create morning forecast' },
+				{ label: 'Two day', type: 'two_day', errorMessage: 'Failed to create two day forecast' },
 				{ label: 'Weekly', type: 'weekly', errorMessage: 'Failed to create weekly forecast' },
-				{ label: 'Seasonal', type: 'seasonal', errorMessage: 'Failed to create seasonal forecast' },
 			],
 		}))
 		addNewFileMenuEntry(buildEntry({
@@ -104,6 +112,7 @@ function registerEntries() {
 			displayName: 'New agromet product',
 			dialogTitle: 'Create agromet product',
 			dialogText: 'Choose the agromet product type to create.',
+			iconSvgInline: AGROMET_MENU_ICON,
 			buttons: [
 				{ label: 'Dekadal', type: 'agromet_dekadal', errorMessage: 'Failed to create dekadal agromet product' },
 				{ label: 'Monthly', type: 'agromet_monthly', errorMessage: 'Failed to create monthly agromet product' },
@@ -114,9 +123,10 @@ function registerEntries() {
 			displayName: 'New climate product',
 			dialogTitle: 'Create climate product',
 			dialogText: 'Choose the climate product type to create.',
+			iconSvgInline: CLIMATE_MENU_ICON,
 			buttons: [
-				{ label: 'Seasonal forecast', type: 'climate_seasonal_forecast', errorMessage: 'Failed to create climate seasonal forecast' },
-				{ label: 'Seasonal NCOF report', type: 'climate_seasonal_ncof_report', errorMessage: 'Failed to create climate seasonal NCOF report' },
+				{ label: 'Seasonal', type: 'climate_seasonal', errorMessage: 'Failed to create climate seasonal forecast' },
+				{ label: 'NCOF Report', type: 'climate_ncof_report', errorMessage: 'Failed to create climate NCOF report' },
 			],
 		}))
 		window.__csisProductsRegistered = true
