@@ -1,0 +1,3315 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<w:document xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" mc:Ignorable="w14 wp14 w15">
+<w:body>
+<w:tbl>
+<w:tblPr>
+<w:tblW w:w="9749" w:type="dxa"/>
+<w:jc w:val="center"/>
+<w:tblInd w:w="0" w:type="dxa"/>
+<w:tblLayout w:type="fixed"/>
+<w:tblCellMar>
+<w:top w:w="0" w:type="dxa"/>
+<w:left w:w="0" w:type="dxa"/>
+<w:bottom w:w="0" w:type="dxa"/>
+<w:right w:w="0" w:type="dxa"/>
+</w:tblCellMar>
+<w:tblLook w:val="04a0" w:noHBand="0" w:noVBand="1" w:firstColumn="1" w:lastRow="0" w:lastColumn="0" w:firstRow="1"/>
+</w:tblPr>
+<w:tblGrid>
+<w:gridCol w:w="1871"/>
+<w:gridCol w:w="6049"/>
+<w:gridCol w:w="1829"/>
+</w:tblGrid>
+<w:tr>
+<w:trPr>
+<w:trHeight w:val="1368" w:hRule="atLeast"/>
+</w:trPr>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="1871" w:type="dxa"/>
+<w:tcBorders>
+</w:tcBorders>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+</w:rPr>
+<w:drawing>
+<wp:inline distT="0" distB="0" distL="0" distR="0">
+<wp:extent cx="1124585" cy="960755"/>
+<wp:effectExtent l="0" t="0" r="0" b="0"/>
+<wp:docPr id="1" name="Picture 1" descr="">
+</wp:docPr>
+<wp:cNvGraphicFramePr>
+<a:graphicFrameLocks xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" noChangeAspect="1"/>
+</wp:cNvGraphicFramePr>
+<a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+<a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+<pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+<pic:nvPicPr>
+<pic:cNvPr id="1" name="Picture 1" descr="">
+</pic:cNvPr>
+<pic:cNvPicPr>
+<a:picLocks noChangeAspect="1" noChangeArrowheads="1"/>
+</pic:cNvPicPr>
+</pic:nvPicPr>
+<pic:blipFill>
+<a:blip r:embed="rId2">
+</a:blip>
+<a:stretch>
+<a:fillRect/>
+</a:stretch>
+</pic:blipFill>
+<pic:spPr bwMode="auto">
+<a:xfrm>
+<a:off x="0" y="0"/>
+<a:ext cx="1124585" cy="960755"/>
+</a:xfrm>
+<a:prstGeom prst="rect">
+<a:avLst/>
+</a:prstGeom>
+</pic:spPr>
+</pic:pic>
+</a:graphicData>
+</a:graphic>
+</wp:inline>
+</w:drawing>
+</w:r>
+</w:p>
+</w:tc>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="6049" w:type="dxa"/>
+<w:tcBorders>
+</w:tcBorders>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:before="0" w:after="40"/>
+<w:jc w:val="center"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:b/>
+<w:sz w:val="30"/>
+</w:rPr>
+<w:t>LESOTHO METEOROLOGICAL SERVICES</w:t>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:before="0" w:after="0"/>
+<w:jc w:val="center"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:b/>
+<w:i/>
+<w:color w:val="4472C4"/>
+<w:sz w:val="30"/>
+</w:rPr>
+<w:t>We are at your service/ Re sebelise</w:t>
+</w:r>
+</w:p>
+</w:tc>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="1829" w:type="dxa"/>
+<w:tcBorders>
+</w:tcBorders>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:jc w:val="right"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+</w:rPr>
+<w:drawing>
+<wp:inline distT="0" distB="0" distL="0" distR="0">
+<wp:extent cx="960120" cy="937260"/>
+<wp:effectExtent l="0" t="0" r="0" b="0"/>
+<wp:docPr id="2" name="Picture 2" descr="">
+</wp:docPr>
+<wp:cNvGraphicFramePr>
+<a:graphicFrameLocks xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" noChangeAspect="1"/>
+</wp:cNvGraphicFramePr>
+<a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+<a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+<pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+<pic:nvPicPr>
+<pic:cNvPr id="2" name="Picture 2" descr="">
+</pic:cNvPr>
+<pic:cNvPicPr>
+<a:picLocks noChangeAspect="1" noChangeArrowheads="1"/>
+</pic:cNvPicPr>
+</pic:nvPicPr>
+<pic:blipFill>
+<a:blip r:embed="rId3">
+</a:blip>
+<a:stretch>
+<a:fillRect/>
+</a:stretch>
+</pic:blipFill>
+<pic:spPr bwMode="auto">
+<a:xfrm>
+<a:off x="0" y="0"/>
+<a:ext cx="960120" cy="937260"/>
+</a:xfrm>
+<a:prstGeom prst="rect">
+<a:avLst/>
+</a:prstGeom>
+</pic:spPr>
+</pic:pic>
+</a:graphicData>
+</a:graphic>
+</wp:inline>
+</w:drawing>
+</w:r>
+</w:p>
+</w:tc>
+</w:tr>
+</w:tbl>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:before="0" w:after="40"/>
+<w:jc w:val="center"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+</w:rPr>
+<w:drawing>
+<wp:inline distT="0" distB="0" distL="0" distR="0">
+<wp:extent cx="6172200" cy="69215"/>
+<wp:effectExtent l="0" t="0" r="0" b="0"/>
+<wp:docPr id="3" name="Picture 3" descr="">
+</wp:docPr>
+<wp:cNvGraphicFramePr>
+<a:graphicFrameLocks xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" noChangeAspect="1"/>
+</wp:cNvGraphicFramePr>
+<a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+<a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+<pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+<pic:nvPicPr>
+<pic:cNvPr id="3" name="Picture 3" descr="">
+</pic:cNvPr>
+<pic:cNvPicPr>
+<a:picLocks noChangeAspect="1" noChangeArrowheads="1"/>
+</pic:cNvPicPr>
+</pic:nvPicPr>
+<pic:blipFill>
+<a:blip r:embed="rId4">
+</a:blip>
+<a:stretch>
+<a:fillRect/>
+</a:stretch>
+</pic:blipFill>
+<pic:spPr bwMode="auto">
+<a:xfrm>
+<a:off x="0" y="0"/>
+<a:ext cx="6172200" cy="69215"/>
+</a:xfrm>
+<a:prstGeom prst="rect">
+<a:avLst/>
+</a:prstGeom>
+</pic:spPr>
+</pic:pic>
+</a:graphicData>
+</a:graphic>
+</wp:inline>
+</w:drawing>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:before="0" w:after="320"/>
+<w:jc w:val="right"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:b/>
+<w:i/>
+<w:sz w:val="19"/>
+</w:rPr>
+<w:t>Date of Issue: {{issue_date}}</w:t>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="240"/>
+<w:jc w:val="center"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:b/>
+<w:i w:val="false"/>
+<w:sz w:val="28"/>
+<w:u w:val="single"/>
+</w:rPr>
+<w:t>{{document_title}}</w:t>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="240"/>
+<w:jc w:val="center"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:b/>
+<w:i w:val="false"/>
+<w:sz w:val="24"/>
+<w:u w:val="single"/>
+</w:rPr>
+<w:t>{{review_heading}}</w:t>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="80"/>
+<w:jc w:val="center"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:b/>
+<w:i w:val="false"/>
+<w:sz w:val="24"/>
+<w:u w:val="single"/>
+</w:rPr>
+<w:t>{{highlights_block}}</w:t>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="80"/>
+<w:jc w:val="center"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:b/>
+<w:i w:val="false"/>
+<w:sz w:val="24"/>
+<w:u w:val="single"/>
+</w:rPr>
+<w:t>{{contents_block}}</w:t>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="280"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:b/>
+<w:i w:val="false"/>
+<w:sz w:val="24"/>
+<w:u w:val="single"/>
+</w:rPr>
+<w:t>{{drivers_block}}</w:t>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="240"/>
+<w:jc w:val="both"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>Tropical cyclones (TCs) are very deep low-pressure systems that form between November and May each year over the South West Indian Ocean (SWIO). Their influence on weather and rainfall over Southern Africa varies from country to country depending on their trajectory (path). Over Lesotho the presence and movement of the TCs over the SWIO results in moisture deficit and suppressed rainfall, and extremely hot conditions (heat waves), leading to very dry conditions. It is, however, worth noting that, currently Tropical cyclogenesis (formation) forecast is complicated and beyond dynamical models’ capability.</w:t>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="240"/>
+<w:jc w:val="both"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>During October 2024 to present, active and sometimes very deep six (6) TCs have already formed over the SWIO. That has resulted in lots of moisture being carried away from the country to these intense and deep low-pressure systems. The impact has been and continues to be more dryer days and more heat waves as Figure 1 and table 1 have deduced. TCs CHIDO and DIKELELI which formed between 05 -12-2024 to 16-12-2024 and from 31-12-2024 to 21-01-2025 respectively negatively influenced both rainfall and temperature. Persistent very dry and very hot spells were experienced during their existence over the SWIO.</w:t>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="240"/>
+<w:jc w:val="both"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>At present moment there are two (2) active tropical disturbances in the SWIO, and this is evident from dry and very hot spells being experienced over the country.</w:t>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="160"/>
+<w:jc w:val="both"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>The October-November-December (OND) 2024 season experienced below normal rainfall for the lowlands and the central highlands. The remaining part of the country which is mainly the eastern parts observed normal rains. This can be seen in Figure 1 below.</w:t>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:before="0" w:after="40"/>
+<w:jc w:val="center"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+</w:rPr>
+<w:drawing>
+<wp:inline distT="0" distB="0" distL="0" distR="0">
+<wp:extent cx="3337560" cy="2671445"/>
+<wp:effectExtent l="0" t="0" r="0" b="0"/>
+<wp:docPr id="4" name="Picture 4" descr="">
+</wp:docPr>
+<wp:cNvGraphicFramePr>
+<a:graphicFrameLocks xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" noChangeAspect="1"/>
+</wp:cNvGraphicFramePr>
+<a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+<a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+<pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+<pic:nvPicPr>
+<pic:cNvPr id="4" name="Picture 4" descr="">
+</pic:cNvPr>
+<pic:cNvPicPr>
+<a:picLocks noChangeAspect="1" noChangeArrowheads="1"/>
+</pic:cNvPicPr>
+</pic:nvPicPr>
+<pic:blipFill>
+<a:blip r:embed="rId5">
+</a:blip>
+<a:stretch>
+<a:fillRect/>
+</a:stretch>
+</pic:blipFill>
+<pic:spPr bwMode="auto">
+<a:xfrm>
+<a:off x="0" y="0"/>
+<a:ext cx="3337560" cy="2671445"/>
+</a:xfrm>
+<a:prstGeom prst="rect">
+<a:avLst/>
+</a:prstGeom>
+</pic:spPr>
+</pic:pic>
+</a:graphicData>
+</a:graphic>
+</wp:inline>
+</w:drawing>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="40" w:after="0"/>
+<w:jc w:val="center"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:i/>
+<w:color w:val="63728A"/>
+<w:sz w:val="18"/>
+</w:rPr>
+<w:t>Figure 1. October to December 2024 Observed Rainfall Relative Anomaly.</w:t>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="80"/>
+<w:jc w:val="center"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:b/>
+<w:i w:val="false"/>
+<w:sz w:val="24"/>
+<w:u w:val="single"/>
+</w:rPr>
+<w:t>ONSET OF RAINS</w:t>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="240"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:b/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>Definition:</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:br/>
+<w:t>The dates are based on condition that from 1</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="16"/>
+<w:vertAlign w:val="superscript"/>
+</w:rPr>
+<w:t>st</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> August to 30</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="16"/>
+<w:vertAlign w:val="superscript"/>
+</w:rPr>
+<w:t>th</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> September there are still high</w:t>
+<w:br/>
+<w:t>chances of late frost and after 30</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="16"/>
+<w:vertAlign w:val="superscript"/>
+</w:rPr>
+<w:t>th</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> April chances of Early frost are also still high.</w:t>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:b/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>Onset of Rains:</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> The first day after 1</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="16"/>
+<w:vertAlign w:val="superscript"/>
+</w:rPr>
+<w:t>st</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> October which satisfies the following conditions:</w:t>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:ind w:left="691" w:hanging="259"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>1. Total Rainfall amount of 25 mm in total of 5 consecutive days.</w:t>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:ind w:left="691" w:hanging="259"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>2. Dry spell of 10 days or less in total of 21 days.</w:t>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="280"/>
+<w:jc w:val="both"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>The onset of the 2024-2025 rainy season occurred between October 21 and November 11, 2024. The earliest onset occurred in Quthing, while the latest in Mafeteng. Most stations experienced their onset in October, with only three stations namely, Mohale’s Hoek and Moshoeshoe I International Airport recording onset on 9</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="16"/>
+<w:vertAlign w:val="superscript"/>
+</w:rPr>
+<w:t>th</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> November and Mafeteng 11</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="16"/>
+<w:vertAlign w:val="superscript"/>
+</w:rPr>
+<w:t>th</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> November 2024.</w:t>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="200"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:b/>
+<w:i w:val="false"/>
+<w:sz w:val="24"/>
+<w:u w:val="single"/>
+</w:rPr>
+<w:t>Temperatures Performance</w:t>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="200"/>
+<w:jc w:val="both"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>During the first 3 months signalling start of the rainy season most places observed slightly higher than average temperatures.</w:t>
+</w:r>
+</w:p>
+<w:tbl>
+<w:tblPr>
+<w:tblW w:w="9749" w:type="dxa"/>
+<w:jc w:val="center"/>
+<w:tblInd w:w="0" w:type="dxa"/>
+<w:tblLayout w:type="fixed"/>
+<w:tblCellMar>
+<w:top w:w="55" w:type="dxa"/>
+<w:left w:w="70" w:type="dxa"/>
+<w:bottom w:w="55" w:type="dxa"/>
+<w:right w:w="70" w:type="dxa"/>
+</w:tblCellMar>
+<w:tblLook w:val="04a0" w:noHBand="0" w:noVBand="1" w:firstColumn="1" w:lastRow="0" w:lastColumn="0" w:firstRow="1"/>
+</w:tblPr>
+<w:tblGrid>
+<w:gridCol w:w="1656"/>
+<w:gridCol w:w="3138"/>
+<w:gridCol w:w="2592"/>
+<w:gridCol w:w="2362"/>
+</w:tblGrid>
+<w:tr>
+<w:trPr>
+</w:trPr>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="1656" w:type="dxa"/>
+<w:tcBorders>
+<w:top w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:left w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:bottom w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:right w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+</w:tcBorders>
+<w:shd w:fill="4F79C0"/>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:color w:val="FFFFFF"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>Station</w:t>
+</w:r>
+</w:p>
+</w:tc>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="3138" w:type="dxa"/>
+<w:tcBorders>
+<w:top w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:left w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:bottom w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:right w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+</w:tcBorders>
+<w:shd w:fill="4F79C0"/>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:color w:val="FFFFFF"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>Period</w:t>
+</w:r>
+</w:p>
+</w:tc>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="2592" w:type="dxa"/>
+<w:tcBorders>
+<w:top w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:left w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:bottom w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:right w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+</w:tcBorders>
+<w:shd w:fill="4F79C0"/>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:color w:val="FFFFFF"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>Temperature Range</w:t>
+<w:br/>
+<w:t>(°C)</w:t>
+</w:r>
+</w:p>
+</w:tc>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="2362" w:type="dxa"/>
+<w:tcBorders>
+<w:top w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:left w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:bottom w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:right w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+</w:tcBorders>
+<w:shd w:fill="4F79C0"/>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:color w:val="FFFFFF"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>Normal</w:t>
+<w:br/>
+<w:t>Temperature Range</w:t>
+<w:br/>
+<w:t>(°C)</w:t>
+</w:r>
+</w:p>
+</w:tc>
+</w:tr>
+<w:tr>
+<w:trPr>
+</w:trPr>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="1656" w:type="dxa"/>
+<w:tcBorders>
+<w:top w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:left w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:bottom w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:right w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+</w:tcBorders>
+<w:shd w:fill="E6EDF7"/>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>Moshoeshoe I</w:t>
+</w:r>
+</w:p>
+</w:tc>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="3138" w:type="dxa"/>
+<w:tcBorders>
+<w:top w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:left w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:bottom w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:right w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+</w:tcBorders>
+<w:shd w:fill="E6EDF7"/>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>11</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="16"/>
+<w:vertAlign w:val="superscript"/>
+</w:rPr>
+<w:t>th</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> to 14</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="16"/>
+<w:vertAlign w:val="superscript"/>
+</w:rPr>
+<w:t>th</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> October 2024</w:t>
+</w:r>
+</w:p>
+</w:tc>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="2592" w:type="dxa"/>
+<w:tcBorders>
+<w:top w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:left w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:bottom w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:right w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+</w:tcBorders>
+<w:shd w:fill="E6EDF7"/>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>31.7 – 33.5</w:t>
+</w:r>
+</w:p>
+</w:tc>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="2362" w:type="dxa"/>
+<w:tcBorders>
+<w:top w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:left w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:bottom w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:right w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+</w:tcBorders>
+<w:shd w:fill="E6EDF7"/>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>23 – 24</w:t>
+</w:r>
+</w:p>
+</w:tc>
+</w:tr>
+<w:tr>
+<w:trPr>
+</w:trPr>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="1656" w:type="dxa"/>
+<w:tcBorders>
+<w:top w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:left w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:bottom w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:right w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+</w:tcBorders>
+<w:shd w:fill="F2F2F2"/>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>Moshoeshoe I</w:t>
+</w:r>
+</w:p>
+</w:tc>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="3138" w:type="dxa"/>
+<w:tcBorders>
+<w:top w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:left w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:bottom w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:right w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+</w:tcBorders>
+<w:shd w:fill="F2F2F2"/>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>12</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="16"/>
+<w:vertAlign w:val="superscript"/>
+</w:rPr>
+<w:t>th</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> to 18</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="16"/>
+<w:vertAlign w:val="superscript"/>
+</w:rPr>
+<w:t>th</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> December 2024</w:t>
+</w:r>
+</w:p>
+</w:tc>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="2592" w:type="dxa"/>
+<w:tcBorders>
+<w:top w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:left w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:bottom w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:right w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+</w:tcBorders>
+<w:shd w:fill="F2F2F2"/>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>31 – 35.2</w:t>
+</w:r>
+</w:p>
+</w:tc>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="2362" w:type="dxa"/>
+<w:tcBorders>
+<w:top w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:left w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:bottom w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:right w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+</w:tcBorders>
+<w:shd w:fill="F2F2F2"/>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>26 – 27.8</w:t>
+</w:r>
+</w:p>
+</w:tc>
+</w:tr>
+<w:tr>
+<w:trPr>
+</w:trPr>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="1656" w:type="dxa"/>
+<w:tcBorders>
+<w:top w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:left w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:bottom w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:right w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+</w:tcBorders>
+<w:shd w:fill="E6EDF7"/>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>Botha-Bothe</w:t>
+</w:r>
+</w:p>
+</w:tc>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="3138" w:type="dxa"/>
+<w:tcBorders>
+<w:top w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:left w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:bottom w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:right w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+</w:tcBorders>
+<w:shd w:fill="E6EDF7"/>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>11</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="16"/>
+<w:vertAlign w:val="superscript"/>
+</w:rPr>
+<w:t>th</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> to 14</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="16"/>
+<w:vertAlign w:val="superscript"/>
+</w:rPr>
+<w:t>th</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> October 2024</w:t>
+</w:r>
+</w:p>
+</w:tc>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="2592" w:type="dxa"/>
+<w:tcBorders>
+<w:top w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:left w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:bottom w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:right w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+</w:tcBorders>
+<w:shd w:fill="E6EDF7"/>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>32.7 - 39.5</w:t>
+</w:r>
+</w:p>
+</w:tc>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="2362" w:type="dxa"/>
+<w:tcBorders>
+<w:top w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:left w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:bottom w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:right w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+</w:tcBorders>
+<w:shd w:fill="E6EDF7"/>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>22 – 23</w:t>
+</w:r>
+</w:p>
+</w:tc>
+</w:tr>
+<w:tr>
+<w:trPr>
+</w:trPr>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="1656" w:type="dxa"/>
+<w:tcBorders>
+<w:top w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:left w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:bottom w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:right w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+</w:tcBorders>
+<w:shd w:fill="F2F2F2"/>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>Botha-Bothe</w:t>
+</w:r>
+</w:p>
+</w:tc>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="3138" w:type="dxa"/>
+<w:tcBorders>
+<w:top w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:left w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:bottom w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:right w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+</w:tcBorders>
+<w:shd w:fill="F2F2F2"/>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>7</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="16"/>
+<w:vertAlign w:val="superscript"/>
+</w:rPr>
+<w:t>th</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> to 15</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="16"/>
+<w:vertAlign w:val="superscript"/>
+</w:rPr>
+<w:t>th</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> December 2024</w:t>
+</w:r>
+</w:p>
+</w:tc>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="2592" w:type="dxa"/>
+<w:tcBorders>
+<w:top w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:left w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:bottom w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:right w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+</w:tcBorders>
+<w:shd w:fill="F2F2F2"/>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>30.3 – 34</w:t>
+</w:r>
+</w:p>
+</w:tc>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="2362" w:type="dxa"/>
+<w:tcBorders>
+<w:top w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:left w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:bottom w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:right w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+</w:tcBorders>
+<w:shd w:fill="F2F2F2"/>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>24.6 – 27.1</w:t>
+</w:r>
+</w:p>
+</w:tc>
+</w:tr>
+<w:tr>
+<w:trPr>
+</w:trPr>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="1656" w:type="dxa"/>
+<w:tcBorders>
+<w:top w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:left w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:bottom w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:right w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+</w:tcBorders>
+<w:shd w:fill="E6EDF7"/>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>Mafeteng</w:t>
+</w:r>
+</w:p>
+</w:tc>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="3138" w:type="dxa"/>
+<w:tcBorders>
+<w:top w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:left w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:bottom w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:right w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+</w:tcBorders>
+<w:shd w:fill="E6EDF7"/>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>11</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="16"/>
+<w:vertAlign w:val="superscript"/>
+</w:rPr>
+<w:t>th</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> to 14</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="16"/>
+<w:vertAlign w:val="superscript"/>
+</w:rPr>
+<w:t>th</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> October 2024</w:t>
+</w:r>
+</w:p>
+</w:tc>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="2592" w:type="dxa"/>
+<w:tcBorders>
+<w:top w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:left w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:bottom w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:right w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+</w:tcBorders>
+<w:shd w:fill="E6EDF7"/>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>30.3 – 33.7</w:t>
+</w:r>
+</w:p>
+</w:tc>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="2362" w:type="dxa"/>
+<w:tcBorders>
+<w:top w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:left w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:bottom w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:right w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+</w:tcBorders>
+<w:shd w:fill="E6EDF7"/>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>22 – 23</w:t>
+</w:r>
+</w:p>
+</w:tc>
+</w:tr>
+<w:tr>
+<w:trPr>
+</w:trPr>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="1656" w:type="dxa"/>
+<w:tcBorders>
+<w:top w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:left w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:bottom w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:right w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+</w:tcBorders>
+<w:shd w:fill="F2F2F2"/>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>Mafeteng</w:t>
+</w:r>
+</w:p>
+</w:tc>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="3138" w:type="dxa"/>
+<w:tcBorders>
+<w:top w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:left w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:bottom w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:right w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+</w:tcBorders>
+<w:shd w:fill="F2F2F2"/>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>6</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="16"/>
+<w:vertAlign w:val="superscript"/>
+</w:rPr>
+<w:t>th</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> to 17</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="16"/>
+<w:vertAlign w:val="superscript"/>
+</w:rPr>
+<w:t>th</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> December 2024</w:t>
+</w:r>
+</w:p>
+</w:tc>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="2592" w:type="dxa"/>
+<w:tcBorders>
+<w:top w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:left w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:bottom w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:right w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+</w:tcBorders>
+<w:shd w:fill="F2F2F2"/>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>30.7 – 33.7</w:t>
+</w:r>
+</w:p>
+</w:tc>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="2362" w:type="dxa"/>
+<w:tcBorders>
+<w:top w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:left w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:bottom w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:right w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+</w:tcBorders>
+<w:shd w:fill="F2F2F2"/>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>25.7 – 28</w:t>
+</w:r>
+</w:p>
+</w:tc>
+</w:tr>
+<w:tr>
+<w:trPr>
+</w:trPr>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="1656" w:type="dxa"/>
+<w:tcBorders>
+<w:top w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:left w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:bottom w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:right w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+</w:tcBorders>
+<w:shd w:fill="E6EDF7"/>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>Leribe</w:t>
+</w:r>
+</w:p>
+</w:tc>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="3138" w:type="dxa"/>
+<w:tcBorders>
+<w:top w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:left w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:bottom w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:right w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+</w:tcBorders>
+<w:shd w:fill="E6EDF7"/>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>11</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="16"/>
+<w:vertAlign w:val="superscript"/>
+</w:rPr>
+<w:t>th</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> to 17</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="16"/>
+<w:vertAlign w:val="superscript"/>
+</w:rPr>
+<w:t>th</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> October 2024</w:t>
+</w:r>
+</w:p>
+</w:tc>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="2592" w:type="dxa"/>
+<w:tcBorders>
+<w:top w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:left w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:bottom w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:right w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+</w:tcBorders>
+<w:shd w:fill="E6EDF7"/>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>30.5 – 35.6</w:t>
+</w:r>
+</w:p>
+</w:tc>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="2362" w:type="dxa"/>
+<w:tcBorders>
+<w:top w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:left w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:bottom w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:right w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+</w:tcBorders>
+<w:shd w:fill="E6EDF7"/>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>23.3 – 23.8</w:t>
+</w:r>
+</w:p>
+</w:tc>
+</w:tr>
+<w:tr>
+<w:trPr>
+</w:trPr>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="1656" w:type="dxa"/>
+<w:tcBorders>
+<w:top w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:left w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:bottom w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:right w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+</w:tcBorders>
+<w:shd w:fill="F2F2F2"/>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>Leribe</w:t>
+</w:r>
+</w:p>
+</w:tc>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="3138" w:type="dxa"/>
+<w:tcBorders>
+<w:top w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:left w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:bottom w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:right w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+</w:tcBorders>
+<w:shd w:fill="F2F2F2"/>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>7</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="16"/>
+<w:vertAlign w:val="superscript"/>
+</w:rPr>
+<w:t>th</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> to 15</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="16"/>
+<w:vertAlign w:val="superscript"/>
+</w:rPr>
+<w:t>th</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t xml:space="preserve"> December 2024</w:t>
+</w:r>
+</w:p>
+</w:tc>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="2592" w:type="dxa"/>
+<w:tcBorders>
+<w:top w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:left w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:bottom w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:right w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+</w:tcBorders>
+<w:shd w:fill="F2F2F2"/>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>31.4 - 35</w:t>
+</w:r>
+</w:p>
+</w:tc>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="2362" w:type="dxa"/>
+<w:tcBorders>
+<w:top w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:left w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:bottom w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+<w:right w:val="single" w:sz="6" w:space="0" w:color="6E6E6E"/>
+</w:tcBorders>
+<w:shd w:fill="F2F2F2"/>
+<w:vAlign w:val="center"/>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>25.6 – 28</w:t>
+</w:r>
+</w:p>
+</w:tc>
+</w:tr>
+</w:tbl>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="40" w:after="240"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:i/>
+<w:color w:val="63728A"/>
+<w:sz w:val="18"/>
+</w:rPr>
+<w:t>Table 1. Heatwaves observed on Oct-Nov-Dec 2024 season</w:t>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="200"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:b/>
+<w:i w:val="false"/>
+<w:sz w:val="24"/>
+<w:u w:val="single"/>
+</w:rPr>
+<w:t>Climate Monitoring (Dekadal {{contents_block}})</w:t>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="both"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>Dry conditions prevailed from October to December 2024, particularly in the lowlands, as previously mentioned. Analyzing 10-day rainfall totals from October, both the lowlands and highlands experienced minimal precipitation during the first two dekads. From the last dekad of October to the second dekad of November, the highlands experienced above-normal precipitation, while the lowlands received near-normal rainfall. December began with dry conditions and high temperatures, marking the first prolonged heatwave of the 2024/25 rainfall season.</w:t>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+</w:rPr>
+</w:r>
+<w:r>
+<w:br w:type="page"/>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:before="0" w:after="40"/>
+<w:jc w:val="center"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+</w:rPr>
+<w:drawing>
+<wp:inline distT="0" distB="0" distL="0" distR="0">
+<wp:extent cx="4251960" cy="2013585"/>
+<wp:effectExtent l="0" t="0" r="0" b="0"/>
+<wp:docPr id="5" name="Picture 5" descr="">
+</wp:docPr>
+<wp:cNvGraphicFramePr>
+<a:graphicFrameLocks xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" noChangeAspect="1"/>
+</wp:cNvGraphicFramePr>
+<a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+<a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+<pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+<pic:nvPicPr>
+<pic:cNvPr id="5" name="Picture 5" descr="">
+</pic:cNvPr>
+<pic:cNvPicPr>
+<a:picLocks noChangeAspect="1" noChangeArrowheads="1"/>
+</pic:cNvPicPr>
+</pic:nvPicPr>
+<pic:blipFill>
+<a:blip r:embed="rId6">
+</a:blip>
+<a:stretch>
+<a:fillRect/>
+</a:stretch>
+</pic:blipFill>
+<pic:spPr bwMode="auto">
+<a:xfrm>
+<a:off x="0" y="0"/>
+<a:ext cx="4251960" cy="2013585"/>
+</a:xfrm>
+<a:prstGeom prst="rect">
+<a:avLst/>
+</a:prstGeom>
+</pic:spPr>
+</pic:pic>
+</a:graphicData>
+</a:graphic>
+</wp:inline>
+</w:drawing>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="40" w:after="240"/>
+<w:jc w:val="center"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:i/>
+<w:color w:val="63728A"/>
+<w:sz w:val="18"/>
+</w:rPr>
+<w:t>Figure 2. Lowlands Dekadal rainfall performance.</w:t>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:before="0" w:after="40"/>
+<w:jc w:val="center"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+</w:rPr>
+<w:drawing>
+<wp:inline distT="0" distB="0" distL="0" distR="0">
+<wp:extent cx="4251960" cy="2339340"/>
+<wp:effectExtent l="0" t="0" r="0" b="0"/>
+<wp:docPr id="6" name="Picture 6" descr="">
+</wp:docPr>
+<wp:cNvGraphicFramePr>
+<a:graphicFrameLocks xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" noChangeAspect="1"/>
+</wp:cNvGraphicFramePr>
+<a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+<a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+<pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+<pic:nvPicPr>
+<pic:cNvPr id="6" name="Picture 6" descr="">
+</pic:cNvPr>
+<pic:cNvPicPr>
+<a:picLocks noChangeAspect="1" noChangeArrowheads="1"/>
+</pic:cNvPicPr>
+</pic:nvPicPr>
+<pic:blipFill>
+<a:blip r:embed="rId7">
+</a:blip>
+<a:stretch>
+<a:fillRect/>
+</a:stretch>
+</pic:blipFill>
+<pic:spPr bwMode="auto">
+<a:xfrm>
+<a:off x="0" y="0"/>
+<a:ext cx="4251960" cy="2339340"/>
+</a:xfrm>
+<a:prstGeom prst="rect">
+<a:avLst/>
+</a:prstGeom>
+</pic:spPr>
+</pic:pic>
+</a:graphicData>
+</a:graphic>
+</wp:inline>
+</w:drawing>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="40" w:after="360"/>
+<w:jc w:val="center"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:i/>
+<w:color w:val="63728A"/>
+<w:sz w:val="18"/>
+</w:rPr>
+<w:t>Figure 3. Highlands Dekadal Rainfall performance.</w:t>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="200"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:b/>
+<w:i w:val="false"/>
+<w:sz w:val="24"/>
+<w:u w:val="single"/>
+</w:rPr>
+<w:t>Rainfall and Temperature Outlook February 2025 to June 2025</w:t>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="0" w:after="0"/>
+<w:jc w:val="both"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>Rainfall outlook: {{rainfall_outlook}}</w:t>
+<w:br/>
+<w:t xml:space="preserve">Temperature outlook: {{temperature_outlook}}</w:t>
+<w:br/>
+<w:t xml:space="preserve">Confidence level: {{confidence_level}}</w:t>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+</w:rPr>
+</w:r>
+<w:r>
+<w:br w:type="page"/>
+</w:r>
+</w:p>
+<w:tbl>
+<w:tblPr>
+<w:tblW w:w="9504" w:type="dxa"/>
+<w:jc w:val="center"/>
+<w:tblInd w:w="0" w:type="dxa"/>
+<w:tblLayout w:type="fixed"/>
+<w:tblCellMar>
+<w:top w:w="0" w:type="dxa"/>
+<w:left w:w="40" w:type="dxa"/>
+<w:bottom w:w="0" w:type="dxa"/>
+<w:right w:w="40" w:type="dxa"/>
+</w:tblCellMar>
+<w:tblLook w:val="04a0" w:noHBand="0" w:noVBand="1" w:firstColumn="1" w:lastRow="0" w:lastColumn="0" w:firstRow="1"/>
+</w:tblPr>
+<w:tblGrid>
+<w:gridCol w:w="4752"/>
+<w:gridCol w:w="4751"/>
+</w:tblGrid>
+<w:tr>
+<w:trPr>
+</w:trPr>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="4752" w:type="dxa"/>
+<w:tcBorders>
+</w:tcBorders>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:pageBreakBefore/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:before="0" w:after="40"/>
+<w:jc w:val="center"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+</w:rPr>
+<w:drawing>
+<wp:inline distT="0" distB="0" distL="0" distR="0">
+<wp:extent cx="2468880" cy="1763395"/>
+<wp:effectExtent l="0" t="0" r="0" b="0"/>
+<wp:docPr id="7" name="Picture 7" descr="">
+</wp:docPr>
+<wp:cNvGraphicFramePr>
+<a:graphicFrameLocks xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" noChangeAspect="1"/>
+</wp:cNvGraphicFramePr>
+<a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+<a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+<pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+<pic:nvPicPr>
+<pic:cNvPr id="7" name="Picture 7" descr="">
+</pic:cNvPr>
+<pic:cNvPicPr>
+<a:picLocks noChangeAspect="1" noChangeArrowheads="1"/>
+</pic:cNvPicPr>
+</pic:nvPicPr>
+<pic:blipFill>
+<a:blip r:embed="rId8">
+</a:blip>
+<a:stretch>
+<a:fillRect/>
+</a:stretch>
+</pic:blipFill>
+<pic:spPr bwMode="auto">
+<a:xfrm>
+<a:off x="0" y="0"/>
+<a:ext cx="2468880" cy="1763395"/>
+</a:xfrm>
+<a:prstGeom prst="rect">
+<a:avLst/>
+</a:prstGeom>
+</pic:spPr>
+</pic:pic>
+</a:graphicData>
+</a:graphic>
+</wp:inline>
+</w:drawing>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="40" w:after="120"/>
+<w:jc w:val="center"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:i/>
+<w:color w:val="63728A"/>
+<w:sz w:val="18"/>
+</w:rPr>
+<w:t>Figure 4. Feb-Mar-Apr 2025 Rainfall Forecast</w:t>
+</w:r>
+</w:p>
+</w:tc>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="4751" w:type="dxa"/>
+<w:tcBorders>
+</w:tcBorders>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:before="0" w:after="40"/>
+<w:jc w:val="center"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+</w:rPr>
+<w:drawing>
+<wp:inline distT="0" distB="0" distL="0" distR="0">
+<wp:extent cx="2468880" cy="1763395"/>
+<wp:effectExtent l="0" t="0" r="0" b="0"/>
+<wp:docPr id="8" name="Picture 8" descr="">
+</wp:docPr>
+<wp:cNvGraphicFramePr>
+<a:graphicFrameLocks xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" noChangeAspect="1"/>
+</wp:cNvGraphicFramePr>
+<a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+<a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+<pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+<pic:nvPicPr>
+<pic:cNvPr id="8" name="Picture 8" descr="">
+</pic:cNvPr>
+<pic:cNvPicPr>
+<a:picLocks noChangeAspect="1" noChangeArrowheads="1"/>
+</pic:cNvPicPr>
+</pic:nvPicPr>
+<pic:blipFill>
+<a:blip r:embed="rId9">
+</a:blip>
+<a:stretch>
+<a:fillRect/>
+</a:stretch>
+</pic:blipFill>
+<pic:spPr bwMode="auto">
+<a:xfrm>
+<a:off x="0" y="0"/>
+<a:ext cx="2468880" cy="1763395"/>
+</a:xfrm>
+<a:prstGeom prst="rect">
+<a:avLst/>
+</a:prstGeom>
+</pic:spPr>
+</pic:pic>
+</a:graphicData>
+</a:graphic>
+</wp:inline>
+</w:drawing>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="40" w:after="120"/>
+<w:jc w:val="center"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:i/>
+<w:color w:val="63728A"/>
+<w:sz w:val="18"/>
+</w:rPr>
+<w:t>Figure 5. Mar-Apr-May 2025 Rainfall Forecast</w:t>
+</w:r>
+</w:p>
+</w:tc>
+</w:tr>
+<w:tr>
+<w:trPr>
+</w:trPr>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="4752" w:type="dxa"/>
+<w:tcBorders>
+</w:tcBorders>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:before="0" w:after="40"/>
+<w:jc w:val="center"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+</w:rPr>
+<w:drawing>
+<wp:inline distT="0" distB="0" distL="0" distR="0">
+<wp:extent cx="2487295" cy="1776730"/>
+<wp:effectExtent l="0" t="0" r="0" b="0"/>
+<wp:docPr id="9" name="Picture 9" descr="">
+</wp:docPr>
+<wp:cNvGraphicFramePr>
+<a:graphicFrameLocks xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" noChangeAspect="1"/>
+</wp:cNvGraphicFramePr>
+<a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+<a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+<pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+<pic:nvPicPr>
+<pic:cNvPr id="9" name="Picture 9" descr="">
+</pic:cNvPr>
+<pic:cNvPicPr>
+<a:picLocks noChangeAspect="1" noChangeArrowheads="1"/>
+</pic:cNvPicPr>
+</pic:nvPicPr>
+<pic:blipFill>
+<a:blip r:embed="rId10">
+</a:blip>
+<a:stretch>
+<a:fillRect/>
+</a:stretch>
+</pic:blipFill>
+<pic:spPr bwMode="auto">
+<a:xfrm>
+<a:off x="0" y="0"/>
+<a:ext cx="2487295" cy="1776730"/>
+</a:xfrm>
+<a:prstGeom prst="rect">
+<a:avLst/>
+</a:prstGeom>
+</pic:spPr>
+</pic:pic>
+</a:graphicData>
+</a:graphic>
+</wp:inline>
+</w:drawing>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="40" w:after="120"/>
+<w:jc w:val="center"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:i/>
+<w:color w:val="63728A"/>
+<w:sz w:val="18"/>
+</w:rPr>
+<w:t>Figure 6. Apr-May-Jun 2025 Rainfall Forecast</w:t>
+</w:r>
+</w:p>
+</w:tc>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="4751" w:type="dxa"/>
+<w:tcBorders>
+</w:tcBorders>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:before="0" w:after="40"/>
+<w:jc w:val="center"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+</w:rPr>
+<w:drawing>
+<wp:inline distT="0" distB="0" distL="0" distR="0">
+<wp:extent cx="2487295" cy="1776730"/>
+<wp:effectExtent l="0" t="0" r="0" b="0"/>
+<wp:docPr id="10" name="Picture 10" descr="">
+</wp:docPr>
+<wp:cNvGraphicFramePr>
+<a:graphicFrameLocks xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" noChangeAspect="1"/>
+</wp:cNvGraphicFramePr>
+<a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+<a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+<pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+<pic:nvPicPr>
+<pic:cNvPr id="10" name="Picture 10" descr="">
+</pic:cNvPr>
+<pic:cNvPicPr>
+<a:picLocks noChangeAspect="1" noChangeArrowheads="1"/>
+</pic:cNvPicPr>
+</pic:nvPicPr>
+<pic:blipFill>
+<a:blip r:embed="rId11">
+</a:blip>
+<a:stretch>
+<a:fillRect/>
+</a:stretch>
+</pic:blipFill>
+<pic:spPr bwMode="auto">
+<a:xfrm>
+<a:off x="0" y="0"/>
+<a:ext cx="2487295" cy="1776730"/>
+</a:xfrm>
+<a:prstGeom prst="rect">
+<a:avLst/>
+</a:prstGeom>
+</pic:spPr>
+</pic:pic>
+</a:graphicData>
+</a:graphic>
+</wp:inline>
+</w:drawing>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="40" w:after="120"/>
+<w:jc w:val="center"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:i/>
+<w:color w:val="63728A"/>
+<w:sz w:val="18"/>
+</w:rPr>
+<w:t>Figure 7. May-Jun-Jul 2025 Rainfall Forecast</w:t>
+</w:r>
+</w:p>
+</w:tc>
+</w:tr>
+<w:tr>
+<w:trPr>
+</w:trPr>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="4752" w:type="dxa"/>
+<w:tcBorders>
+</w:tcBorders>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:before="0" w:after="40"/>
+<w:jc w:val="center"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+</w:rPr>
+<w:drawing>
+<wp:inline distT="0" distB="0" distL="0" distR="0">
+<wp:extent cx="2331720" cy="1866265"/>
+<wp:effectExtent l="0" t="0" r="0" b="0"/>
+<wp:docPr id="11" name="Picture 11" descr="">
+</wp:docPr>
+<wp:cNvGraphicFramePr>
+<a:graphicFrameLocks xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" noChangeAspect="1"/>
+</wp:cNvGraphicFramePr>
+<a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+<a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+<pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+<pic:nvPicPr>
+<pic:cNvPr id="11" name="Picture 11" descr="">
+</pic:cNvPr>
+<pic:cNvPicPr>
+<a:picLocks noChangeAspect="1" noChangeArrowheads="1"/>
+</pic:cNvPicPr>
+</pic:nvPicPr>
+<pic:blipFill>
+<a:blip r:embed="rId12">
+</a:blip>
+<a:stretch>
+<a:fillRect/>
+</a:stretch>
+</pic:blipFill>
+<pic:spPr bwMode="auto">
+<a:xfrm>
+<a:off x="0" y="0"/>
+<a:ext cx="2331720" cy="1866265"/>
+</a:xfrm>
+<a:prstGeom prst="rect">
+<a:avLst/>
+</a:prstGeom>
+</pic:spPr>
+</pic:pic>
+</a:graphicData>
+</a:graphic>
+</wp:inline>
+</w:drawing>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="40" w:after="120"/>
+<w:jc w:val="center"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:i/>
+<w:color w:val="63728A"/>
+<w:sz w:val="18"/>
+</w:rPr>
+<w:t>Figure 8. Feb-Mar-Apr Normal Rainfall (1991-2020).</w:t>
+</w:r>
+</w:p>
+</w:tc>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="4751" w:type="dxa"/>
+<w:tcBorders>
+</w:tcBorders>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:before="0" w:after="40"/>
+<w:jc w:val="center"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+</w:rPr>
+<w:drawing>
+<wp:inline distT="0" distB="0" distL="0" distR="0">
+<wp:extent cx="2304415" cy="1842770"/>
+<wp:effectExtent l="0" t="0" r="0" b="0"/>
+<wp:docPr id="12" name="Picture 12" descr="">
+</wp:docPr>
+<wp:cNvGraphicFramePr>
+<a:graphicFrameLocks xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" noChangeAspect="1"/>
+</wp:cNvGraphicFramePr>
+<a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+<a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+<pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+<pic:nvPicPr>
+<pic:cNvPr id="12" name="Picture 12" descr="">
+</pic:cNvPr>
+<pic:cNvPicPr>
+<a:picLocks noChangeAspect="1" noChangeArrowheads="1"/>
+</pic:cNvPicPr>
+</pic:nvPicPr>
+<pic:blipFill>
+<a:blip r:embed="rId13">
+</a:blip>
+<a:stretch>
+<a:fillRect/>
+</a:stretch>
+</pic:blipFill>
+<pic:spPr bwMode="auto">
+<a:xfrm>
+<a:off x="0" y="0"/>
+<a:ext cx="2304415" cy="1842770"/>
+</a:xfrm>
+<a:prstGeom prst="rect">
+<a:avLst/>
+</a:prstGeom>
+</pic:spPr>
+</pic:pic>
+</a:graphicData>
+</a:graphic>
+</wp:inline>
+</w:drawing>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="40" w:after="120"/>
+<w:jc w:val="center"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:i/>
+<w:color w:val="63728A"/>
+<w:sz w:val="18"/>
+</w:rPr>
+<w:t>Figure 9. Mar-Apr-May Normal Rainfall (1991-2020).</w:t>
+</w:r>
+</w:p>
+</w:tc>
+</w:tr>
+<w:tr>
+<w:trPr>
+</w:trPr>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="4752" w:type="dxa"/>
+<w:tcBorders>
+</w:tcBorders>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:before="0" w:after="40"/>
+<w:jc w:val="center"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+</w:rPr>
+<w:drawing>
+<wp:inline distT="0" distB="0" distL="0" distR="0">
+<wp:extent cx="2377440" cy="1902460"/>
+<wp:effectExtent l="0" t="0" r="0" b="0"/>
+<wp:docPr id="13" name="Picture 13" descr="">
+</wp:docPr>
+<wp:cNvGraphicFramePr>
+<a:graphicFrameLocks xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" noChangeAspect="1"/>
+</wp:cNvGraphicFramePr>
+<a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+<a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+<pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+<pic:nvPicPr>
+<pic:cNvPr id="13" name="Picture 13" descr="">
+</pic:cNvPr>
+<pic:cNvPicPr>
+<a:picLocks noChangeAspect="1" noChangeArrowheads="1"/>
+</pic:cNvPicPr>
+</pic:nvPicPr>
+<pic:blipFill>
+<a:blip r:embed="rId14">
+</a:blip>
+<a:stretch>
+<a:fillRect/>
+</a:stretch>
+</pic:blipFill>
+<pic:spPr bwMode="auto">
+<a:xfrm>
+<a:off x="0" y="0"/>
+<a:ext cx="2377440" cy="1902460"/>
+</a:xfrm>
+<a:prstGeom prst="rect">
+<a:avLst/>
+</a:prstGeom>
+</pic:spPr>
+</pic:pic>
+</a:graphicData>
+</a:graphic>
+</wp:inline>
+</w:drawing>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="40" w:after="0"/>
+<w:jc w:val="center"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:i/>
+<w:color w:val="63728A"/>
+<w:sz w:val="18"/>
+</w:rPr>
+<w:t>Figure 10. Apr-May-Jun Normal Rainfall (1991-2020).</w:t>
+</w:r>
+</w:p>
+</w:tc>
+<w:tc>
+<w:tcPr>
+<w:tcW w:w="4751" w:type="dxa"/>
+<w:tcBorders>
+</w:tcBorders>
+</w:tcPr>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:before="0" w:after="40"/>
+<w:jc w:val="center"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+</w:rPr>
+<w:drawing>
+<wp:inline distT="0" distB="0" distL="0" distR="0">
+<wp:extent cx="2377440" cy="1902460"/>
+<wp:effectExtent l="0" t="0" r="0" b="0"/>
+<wp:docPr id="14" name="Picture 14" descr="">
+</wp:docPr>
+<wp:cNvGraphicFramePr>
+<a:graphicFrameLocks xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" noChangeAspect="1"/>
+</wp:cNvGraphicFramePr>
+<a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+<a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+<pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+<pic:nvPicPr>
+<pic:cNvPr id="14" name="Picture 14" descr="">
+</pic:cNvPr>
+<pic:cNvPicPr>
+<a:picLocks noChangeAspect="1" noChangeArrowheads="1"/>
+</pic:cNvPicPr>
+</pic:nvPicPr>
+<pic:blipFill>
+<a:blip r:embed="rId15">
+</a:blip>
+<a:stretch>
+<a:fillRect/>
+</a:stretch>
+</pic:blipFill>
+<pic:spPr bwMode="auto">
+<a:xfrm>
+<a:off x="0" y="0"/>
+<a:ext cx="2377440" cy="1902460"/>
+</a:xfrm>
+<a:prstGeom prst="rect">
+<a:avLst/>
+</a:prstGeom>
+</pic:spPr>
+</pic:pic>
+</a:graphicData>
+</a:graphic>
+</wp:inline>
+</w:drawing>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:widowControl w:val="false"/>
+<w:bidi w:val="0"/>
+<w:spacing w:lineRule="auto" w:line="240" w:before="40" w:after="0"/>
+<w:jc w:val="center"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:i/>
+<w:color w:val="63728A"/>
+<w:sz w:val="18"/>
+</w:rPr>
+<w:t>Figure 11. May-Jun-Jul Normal Rainfall (1991-2020).</w:t>
+</w:r>
+</w:p>
+</w:tc>
+</w:tr>
+</w:tbl>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+</w:rPr>
+</w:r>
+<w:r>
+<w:br w:type="page"/>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+</w:rPr>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:before="0" w:after="0"/>
+<w:jc w:val="left"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+</w:rPr>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:before="0" w:after="40"/>
+<w:jc w:val="center"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>Yours sincerely,</w:t>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:before="0" w:after="40"/>
+<w:jc w:val="center"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+</w:rPr>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:before="0" w:after="40"/>
+<w:jc w:val="center"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+</w:rPr>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:before="0" w:after="40"/>
+<w:jc w:val="center"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>………</w:t>
+</w:r>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>..……………………….</w:t>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:before="0" w:after="0"/>
+<w:jc w:val="center"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>Mr. Mokoena France</w:t>
+</w:r>
+</w:p>
+<w:p>
+<w:pPr>
+<w:pStyle w:val="Normal"/>
+<w:bidi w:val="0"/>
+<w:spacing w:before="0" w:after="0"/>
+<w:jc w:val="center"/>
+<w:rPr>
+</w:rPr>
+</w:pPr>
+<w:r>
+<w:rPr>
+<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+<w:sz w:val="24"/>
+</w:rPr>
+<w:t>(Director a.i)</w:t>
+</w:r>
+</w:p>
+<w:sectPr>
+<w:type w:val="nextPage"/>
+<w:pgSz w:w="12240" w:h="15840"/>
+<w:pgMar w:left="1440" w:right="1440" w:gutter="0" w:header="0" w:top="1440" w:footer="0" w:bottom="1440"/>
+<w:pgNumType w:fmt="decimal"/>
+<w:formProt w:val="false"/>
+<w:textDirection w:val="lrTb"/>
+<w:docGrid w:type="default" w:linePitch="100" w:charSpace="4096"/>
+</w:sectPr>
+</w:body>
+</w:document>

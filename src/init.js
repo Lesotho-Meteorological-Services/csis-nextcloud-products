@@ -3,7 +3,10 @@ import axios from '@nextcloud/axios'
 import { generateFilePath, generateUrl } from '@nextcloud/router'
 import { t } from '@nextcloud/l10n'
 import { getDialogBuilder, showError } from '@nextcloud/dialogs'
+import { fetchStructuredProductDefinition, generateStructuredProduct } from './productApi'
+import { showProductFormModal } from './productFormModal'
 import '@nextcloud/dialogs/style.css'
+import './styles.css'
 
 const WEATHER_ENTRY_ID = 'csis-weather-product'
 const AGROMET_ENTRY_ID = 'csis-agromet-product'
@@ -27,6 +30,41 @@ async function createForecast(dir, type) {
 		+ '?filePath=' + encodeURIComponent(data.filePath)
 
 	window.location.href = url
+}
+
+async function createStructuredProduct(dir, type) {
+	const definitionResponse = await fetchStructuredProductDefinition(type)
+	const { values } = await showProductFormModal(definitionResponse.data)
+	const { data } = await generateStructuredProduct({ dir, type, values })
+
+	const url = generateUrl('/apps/onlyoffice/{fileId}', { fileId: data.fileId })
+		+ '?filePath=' + encodeURIComponent(data.filePath)
+
+	window.location.href = url
+}
+
+async function createProduct(dir, type) {
+	try {
+		await createStructuredProduct(dir, type)
+	} catch (error) {
+		if (error?.message === 'cancelled') {
+			return
+		}
+
+		if (error?.response?.status === 404) {
+			await createForecast(dir, type)
+			return
+		}
+
+		if (error?.response?.status === 422) {
+			const validationErrors = Object.values(error?.response?.data?.errors || {})
+			const message = validationErrors[0] || error?.response?.data?.message || t('csis_products', 'Validation failed.')
+			showError(String(message))
+			return
+		}
+
+		throw error
+	}
 }
 
 function buildEntry({
@@ -57,7 +95,7 @@ function buildEntry({
 					...buttons.map(({ label, type, errorMessage }) => ({
 						label: t('csis_products', label),
 						type: 'primary',
-						callback: () => createForecast(dir, type).catch(() => showError(t('csis_products', errorMessage))),
+						callback: () => createProduct(dir, type).catch(() => showError(t('csis_products', errorMessage))),
 					})),
 				])
 				.build()

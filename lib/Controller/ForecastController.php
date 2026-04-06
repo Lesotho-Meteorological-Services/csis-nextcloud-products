@@ -10,6 +10,7 @@ use OCP\Files\IRootFolder;
 use OCP\IRequest;
 use OCP\IUserSession;
 use OCP\IGroupManager;
+use OCA\CSISProducts\Service\DocxTemplateService;
 
 class ForecastController extends Controller {
     public function __construct(
@@ -18,6 +19,7 @@ class ForecastController extends Controller {
         private IRootFolder $rootFolder,
         private IUserSession $userSession,
         private IGroupManager $groupManager,
+        private DocxTemplateService $docxTemplateService,
     ) {
         parent::__construct($appName, $request);
     }
@@ -50,7 +52,7 @@ class ForecastController extends Controller {
             'agromet_dekadal' => [['Agromet_Dekadal.docx', 'agromet_dekadal.docx'], 'Agromet_Dekadal_' . $this->dekadLabel($now)],
             'agromet_monthly' => [['Agromet_Monthly.docx', 'agromet_monthly.docx'], 'Agromet_Monthly_' . $now->format('Y-m')],
             'climate_seasonal' => [['Climate_Seasonal_Forecast.docx', 'climate_seasonal_forecast.docx'], 'Climate_Seasonal_Forecast_' . $this->seasonLabel($now)],
-            'climate_ncof_report' => [['Climate_Seasonal_Forecast.docx', 'climate_seasonal_forecast.docx'], 'Climate_NCOF_Report_' . $this->seasonLabel($now)],
+            'climate_ncof_report' => [['Climate_Seasonal_NCOF_Report.docx', 'climate_seasonal_ncof_report.docx'], 'Climate_NCOF_Report_' . $this->seasonLabel($now)],
         };
 
         $uid = $user->getUID();
@@ -90,7 +92,31 @@ class ForecastController extends Controller {
             ], 500);
         }
 
-        $content = @file_get_contents($templatePath);
+        try {
+            $content = $type === 'climate_ncof_report'
+                ? $this->docxTemplateService->render(
+                    $templatePath,
+                    $this->buildNcofPlaceholders($now),
+                    [
+                        'type' => 'climate_ncof_report',
+                        'values' => [
+                            'sector_impacts' => [
+                                ['name' => 'Agriculture', 'description' => 'Outline likely implications for this sector based on the forecast.'],
+                                ['name' => 'Water', 'description' => 'Outline likely implications for this sector based on the forecast.'],
+                                ['name' => 'Disaster Risk Reduction', 'description' => 'Outline likely implications for this sector based on the forecast.'],
+                                ['name' => 'Health', 'description' => 'Outline likely implications for this sector based on the forecast.'],
+                            ],
+                        ],
+                    ],
+                )
+                : @file_get_contents($templatePath);
+        } catch (\Throwable $exception) {
+            return new DataResponse([
+                'message' => 'Failed to render template',
+                'detail' => $exception->getMessage(),
+            ], 500);
+        }
+
         if ($content === false) {
             return new DataResponse(['message' => 'Template unreadable'], 500);
         }
@@ -131,5 +157,28 @@ class ForecastController extends Controller {
         };
 
         return $dt->format('Y-m') . '_D' . $dekad;
+    }
+
+    /**
+     * @return array<string, string>
+     */
+    private function buildNcofPlaceholders(\DateTimeImmutable $now): array {
+        return [
+            'issue_date' => $now->format('j F Y'),
+            'document_title' => 'National Climate Outlook Forum (NCOF) Report',
+            'forecast_period' => '[Insert forecast period]',
+            'introduction' => 'This document presents the initial National Climate Outlook Forum (NCOF) report template for climate outlook preparation, review, and finalisation.',
+            'expected_conditions_summary' => 'Provide a concise summary of the expected seasonal climate conditions, including rainfall and temperature outlook where applicable.',
+            'recent_climate_review' => 'Summarise notable recent climate conditions and observed anomalies relevant to the forecast period.',
+            'advisory_actions' => 'Provide recommended preparedness, response, or planning actions for stakeholders.',
+            'prepared_by' => '[Insert name/office]',
+            'reviewed_by' => '[Insert name/office]',
+            'approved_by' => '[Insert name/office]',
+            'review_heading' => '',
+            'highlights_block' => '',
+            'contents_block' => '',
+            'drivers_block' => '',
+            'driver_description' => '',
+        ];
     }
 }
