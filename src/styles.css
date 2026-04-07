@@ -1,3 +1,135 @@
+.csis-products-menu-item--has-submenu {
+	position: relative;
+}
+
+.csis-products-menu-item--has-submenu::after {
+	content: '›';
+	position: absolute;
+	top: 50%;
+	right: 12px;
+	transform: translateY(-50%);
+	font-size: 14px;
+	line-height: 1;
+	color: var(--color-text-maxcontrast, #667583);
+	pointer-events: none;
+}
+
+.csis-products-menu-item--submenu-open {
+	background: var(--color-background-hover, rgba(12, 84, 145, 0.08));
+}
+
+.csis-products-submenu {
+	position: fixed;
+	z-index: 10010;
+	min-width: 180px;
+	padding: 4px;
+	border: 1px solid var(--color-border, #d9e0e6);
+	border-radius: 8px;
+	background: var(--color-main-background, #fff);
+	box-shadow: 0 14px 28px rgba(15, 23, 32, 0.14);
+}
+
+.csis-products-submenu__item {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	min-height: 32px;
+	padding: 0 10px;
+	border: 0;
+	border-radius: 6px;
+	background: transparent;
+	color: var(--color-main-text, #24313d);
+	font-size: 13px;
+	line-height: 1.35;
+	text-align: left;
+	cursor: pointer;
+}
+
+.csis-products-submenu__item:hover,
+.csis-products-submenu__item:focus-visible {
+	background: var(--color-background-hover, rgba(12, 84, 145, 0.08));
+	outline: none;
+}
+
+.csis-products-menu-item--has-submenu::after {
+	content: '>';
+	font-size: 11px;
+}
+
+.csis-products-submenu {
+	position: absolute;
+	top: -4px;
+	left: calc(100% - 1px);
+	z-index: 20;
+	margin: 0;
+	padding: 4px 0;
+	list-style: none;
+	box-shadow: 0 8px 18px rgba(15, 23, 32, 0.12);
+}
+
+.csis-products-submenu__entry {
+	margin: 0;
+	padding: 0;
+}
+
+.csis-products-submenu__item {
+	min-height: 34px;
+	padding: 0 12px;
+	border: 0;
+	border-radius: 0;
+	white-space: nowrap;
+}
+
+.csis-products-menu-item--has-submenu::after {
+	content: '>';
+	position: absolute;
+	top: 50%;
+	right: 12px;
+	transform: translateY(-50%);
+	font-size: 11px;
+	line-height: 1;
+	color: var(--color-text-maxcontrast, #667583);
+	pointer-events: none;
+}
+
+.csis-products-submenu {
+	position: absolute;
+	top: -4px;
+	left: calc(100% - 1px);
+	z-index: 20;
+	min-width: 180px;
+	margin: 0;
+	padding: 4px 0;
+	list-style: none;
+	border: 1px solid var(--color-border, #d9e0e6);
+	border-radius: 8px;
+	background: var(--color-main-background, #fff);
+	box-shadow: 0 8px 18px rgba(15, 23, 32, 0.12);
+}
+
+.csis-products-submenu__item {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	min-height: 34px;
+	padding: 0 12px;
+	border: 0;
+	border-radius: 0;
+	background: transparent;
+	color: var(--color-main-text, #24313d);
+	font-size: 13px;
+	line-height: 1.35;
+	text-align: left;
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+.csis-products-submenu__item:hover,
+.csis-products-submenu__item:focus-visible {
+	background: var(--color-background-hover, rgba(12, 84, 145, 0.08));
+	outline: none;
+}
+
 .csis-product-form {
 	--csis-surface: #ffffff;
 	--csis-surface-subtle: #fafbfd;
@@ -1042,4 +1174,69 @@
 	.csis-product-form__temperaturetable-row-actions {
 		justify-content: flex-start;
 	}
+}
+
+/* Final override for the Files + New agromet floating chooser panel. */
+.csis-products-menu-item--has-submenu {
+	position: relative;
+}
+
+.csis-products-menu-item--has-submenu::after {
+	content: '>';
+	position: absolute;
+	top: 50%;
+	right: 12px;
+	transform: translateY(-50%);
+	font-size: 11px;
+	line-height: 1;
+	color: var(--color-text-maxcontrast, #667583);
+	pointer-events: none;
+}
+
+.csis-products-menu-item--submenu-open {
+	background: var(--color-background-hover, rgba(12, 84, 145, 0.08));
+}
+
+.csis-products-submenu {
+	position: fixed !important;
+	z-index: 10010 !important;
+	min-width: 188px;
+	margin: 0 !important;
+	padding: 6px 0 !important;
+	list-style: none;
+	border: 1px solid var(--color-border, #d9e0e6);
+	border-radius: 6px;
+	background: var(--color-main-background, #fff);
+	box-shadow: 0 10px 24px rgba(15, 23, 32, 0.14);
+	overflow: hidden;
+}
+
+.csis-products-submenu__entry {
+	margin: 0;
+	padding: 0;
+}
+
+.csis-products-submenu__item {
+	display: flex !important;
+	align-items: center !important;
+	box-sizing: border-box;
+	width: 100% !important;
+	max-width: 100%;
+	min-height: 32px !important;
+	padding: 0 14px !important;
+	border: 0 !important;
+	border-radius: 0 !important;
+	background: transparent !important;
+	color: var(--color-main-text, #24313d) !important;
+	font-size: 13px !important;
+	line-height: 1.35 !important;
+	text-align: left !important;
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+.csis-products-submenu__item:hover,
+.csis-products-submenu__item:focus-visible {
+	background: var(--color-background-hover, rgba(12, 84, 145, 0.08)) !important;
+	outline: none;
 }
