@@ -1430,7 +1430,12 @@
 
 .csis-product-form__field select,
 .csis-product-form__monthyear select {
-	padding-inline-end: 42px;
+	height: 36px;
+	min-height: 36px;
+	padding-block: 0;
+	padding-inline-start: 14px;
+	padding-inline-end: 42px !important;
+	line-height: normal;
 }
 
 .csis-product-form__field select option,
@@ -1807,7 +1812,12 @@
 }
 
 .csis-product-form__temperaturetable-select {
-	padding-inline-end: 42px;
+	height: 36px;
+	min-height: 36px;
+	padding-block: 0;
+	padding-inline-start: 14px;
+	padding-inline-end: 42px !important;
+	line-height: normal;
 }
 
 .csis-product-form__temperaturetable-custom {
