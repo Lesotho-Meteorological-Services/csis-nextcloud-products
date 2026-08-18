@@ -347,8 +347,6 @@ class StructuredProductRegistry {
 						'helperText' => 'Enter the expected maximum temperature for each forecast area or station.',
 						'emptyText' => 'No temperature rows added yet.',
 						'areaOptions' => $this->mapOptions(self::MORNING_AREA_OPTIONS),
-						'customOptionLabel' => 'Add custom area / station',
-						'customPlaceholder' => 'Enter custom area / station',
 					],
 				],
 				'sections' => [
@@ -487,8 +485,6 @@ class StructuredProductRegistry {
 						'helperText' => 'Enter the forecast maximum and minimum temperatures for each area or station.',
 						'emptyText' => 'No temperature rows added yet.',
 						'areaOptions' => $this->mapOptions(self::MORNING_AREA_OPTIONS),
-						'customOptionLabel' => 'Add custom area / station',
-						'customPlaceholder' => 'Enter custom area / station',
 						'default' => [[
 							'area' => '',
 							'max_this_afternoon' => '',

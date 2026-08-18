@@ -584,8 +584,6 @@ function createFieldMarkup(field) {
 					</div>
 				</div>
 				<input type="hidden" data-temperaturetable-empty-text value="${escapeHtml(field.emptyText || 'No temperature rows added yet.')}">
-				<input type="hidden" data-temperaturetable-custom-option-label value="${escapeHtml(field.customOptionLabel || 'Add custom area')}">
-				<input type="hidden" data-temperaturetable-custom-placeholder value="${escapeHtml(field.customPlaceholder || 'Enter custom area name')}">
 				<input type="hidden" data-temperaturetable-options value="${escapeHtml(JSON.stringify(field.areaOptions || []))}">
 				${helpText}
 				<p class="csis-product-form__error" hidden></p>
@@ -620,8 +618,6 @@ function createFieldMarkup(field) {
 					</div>
 				</div>
 				<input type="hidden" data-twodaytable-empty-text value="${escapeHtml(field.emptyText || 'No temperature rows added yet.')}">
-				<input type="hidden" data-twodaytable-custom-option-label value="${escapeHtml(field.customOptionLabel || 'Add custom area')}">
-				<input type="hidden" data-twodaytable-custom-placeholder value="${escapeHtml(field.customPlaceholder || 'Enter custom area name')}">
 				<input type="hidden" data-twodaytable-options value="${escapeHtml(JSON.stringify(field.areaOptions || []))}">
 				${helpText}
 				<p class="csis-product-form__error" hidden></p>
@@ -1381,11 +1377,7 @@ function getTemperatureTableOptions(wrapper) {
 function getTemperatureTableRows(wrapper) {
 	return Array.from(wrapper.querySelectorAll('[data-temperaturetable-row]')).map((row) => {
 		const areaSelect = row.querySelector('[data-temperaturetable-area-select]')
-		const customInput = row.querySelector('[data-temperaturetable-area-custom]')
-		const selectedValue = areaSelect?.value || ''
-		const area = selectedValue === CUSTOM_SELECT_VALUE
-			? normalizeTemperatureValue(customInput?.value || '')
-			: normalizeTemperatureValue(selectedValue)
+		const area = normalizeTemperatureValue(areaSelect?.value || '')
 		const temperature = normalizeTemperatureValue(row.querySelector('[data-temperaturetable-temperature]')?.value || '')
 
 		return { area, temperature }
@@ -1400,10 +1392,6 @@ function renderTemperatureTable(wrapper, rows) {
 
 	const emptyText = wrapper.querySelector('[data-temperaturetable-empty-text]')?.getAttribute('value')
 		|| 'No temperature rows added yet.'
-	const customOptionLabel = wrapper.querySelector('[data-temperaturetable-custom-option-label]')?.getAttribute('value')
-		|| 'Add custom area'
-	const customPlaceholder = wrapper.querySelector('[data-temperaturetable-custom-placeholder]')?.getAttribute('value')
-		|| 'Enter custom area name'
 	const options = getTemperatureTableOptions(wrapper)
 
 	if (rows.length === 0) {
@@ -1413,7 +1401,7 @@ function renderTemperatureTable(wrapper, rows) {
 
 	container.innerHTML = rows.map((row, index) => {
 		const matchesOption = options.some((option) => option.value === row.area)
-		const selectedAreaValue = matchesOption ? row.area : CUSTOM_SELECT_VALUE
+		const selectedAreaValue = matchesOption ? row.area : ''
 		const areaOptions = options.map((option) => `
 			<option value="${escapeHtml(option.value)}" ${option.value === selectedAreaValue ? 'selected' : ''}>
 				${escapeHtml(option.label)}
@@ -1425,18 +1413,9 @@ function renderTemperatureTable(wrapper, rows) {
 				<div class="csis-product-form__temperaturetable-area">
 					<label class="csis-product-form__temperaturetable-label">Area / Station</label>
 					<select class="csis-product-form__temperaturetable-select" data-temperaturetable-area-select>
-						<option value="">Select area</option>
+						<option value="">Select area / station</option>
 						${areaOptions}
-						<option value="${CUSTOM_SELECT_VALUE}" ${selectedAreaValue === CUSTOM_SELECT_VALUE ? 'selected' : ''}>${escapeHtml(customOptionLabel)}</option>
 					</select>
-					<input
-						type="text"
-						class="csis-product-form__temperaturetable-custom"
-						data-temperaturetable-area-custom
-						placeholder="${escapeHtml(customPlaceholder)}"
-						value="${escapeHtml(selectedAreaValue === CUSTOM_SELECT_VALUE ? row.area : '')}"
-						${selectedAreaValue === CUSTOM_SELECT_VALUE ? '' : 'hidden'}
-					>
 				</div>
 				<div class="csis-product-form__temperaturetable-temp">
 					<label class="csis-product-form__temperaturetable-label">Expected Maximum Temperature (°C)</label>
@@ -1471,24 +1450,6 @@ function initializeTemperatureTableFields(overlay) {
 		const defaults = wrapper.dataset.defaultRows ? JSON.parse(wrapper.dataset.defaultRows) : []
 		const rows = Array.isArray(defaults) && defaults.length > 0 ? defaults : [{ area: '', temperature: '' }]
 		renderTemperatureTable(wrapper, rows)
-
-		wrapper.addEventListener('change', (event) => {
-			const select = event.target.closest('[data-temperaturetable-area-select]')
-			if (!(select instanceof HTMLSelectElement)) {
-				return
-			}
-
-			const row = select.closest('[data-temperaturetable-row]')
-			const customInput = row?.querySelector('[data-temperaturetable-area-custom]')
-			if (!(customInput instanceof HTMLInputElement)) {
-				return
-			}
-
-			customInput.hidden = select.value !== CUSTOM_SELECT_VALUE
-			if (customInput.hidden) {
-				customInput.value = ''
-			}
-		})
 
 		wrapper.addEventListener('click', (event) => {
 			const addButton = event.target.closest('[data-temperaturetable-add]')
@@ -1529,11 +1490,7 @@ function getTwoDayTableOptions(wrapper) {
 function getTwoDayTemperatureRows(wrapper) {
 	return Array.from(wrapper.querySelectorAll('[data-twodaytable-row]')).map((row) => {
 		const areaSelect = row.querySelector('[data-twodaytable-area-select]')
-		const customInput = row.querySelector('[data-twodaytable-area-custom]')
-		const selectedValue = areaSelect?.value || ''
-		const area = selectedValue === CUSTOM_SELECT_VALUE
-			? normalizeTemperatureValue(customInput?.value || '')
-			: normalizeTemperatureValue(selectedValue)
+		const area = normalizeTemperatureValue(areaSelect?.value || '')
 
 		return {
 			area,
@@ -1557,10 +1514,6 @@ function renderTwoDayTemperatureTable(wrapper, rows) {
 
 	const emptyText = wrapper.querySelector('[data-twodaytable-empty-text]')?.getAttribute('value')
 		|| 'No temperature rows added yet.'
-	const customOptionLabel = wrapper.querySelector('[data-twodaytable-custom-option-label]')?.getAttribute('value')
-		|| 'Add custom area'
-	const customPlaceholder = wrapper.querySelector('[data-twodaytable-custom-placeholder]')?.getAttribute('value')
-		|| 'Enter custom area name'
 	const options = getTwoDayTableOptions(wrapper)
 
 	if (rows.length === 0) {
@@ -1570,7 +1523,7 @@ function renderTwoDayTemperatureTable(wrapper, rows) {
 
 	container.innerHTML = rows.map((row, index) => {
 		const matchesOption = options.some((option) => option.value === row.area)
-		const selectedAreaValue = matchesOption ? row.area : CUSTOM_SELECT_VALUE
+		const selectedAreaValue = matchesOption ? row.area : ''
 		const areaOptions = options.map((option) => `
 			<option value="${escapeHtml(option.value)}" ${option.value === selectedAreaValue ? 'selected' : ''}>
 				${escapeHtml(option.label)}
@@ -1596,18 +1549,9 @@ function renderTwoDayTemperatureTable(wrapper, rows) {
 				<div class="csis-product-form__twodaytable-area">
 					<label class="csis-product-form__temperaturetable-label">Area / Station</label>
 					<select class="csis-product-form__temperaturetable-select" data-twodaytable-area-select>
-						<option value="">Select area</option>
+						<option value="">Select area / station</option>
 						${areaOptions}
-						<option value="${CUSTOM_SELECT_VALUE}" ${selectedAreaValue === CUSTOM_SELECT_VALUE ? 'selected' : ''}>${escapeHtml(customOptionLabel)}</option>
 					</select>
-					<input
-						type="text"
-						class="csis-product-form__temperaturetable-custom"
-						data-twodaytable-area-custom
-						placeholder="${escapeHtml(customPlaceholder)}"
-						value="${escapeHtml(selectedAreaValue === CUSTOM_SELECT_VALUE ? row.area : '')}"
-						${selectedAreaValue === CUSTOM_SELECT_VALUE ? '' : 'hidden'}
-					>
 				</div>
 				${renderNumericCell('Max This Afternoon (°C)', row.max_this_afternoon, 'data-twodaytable-max-this-afternoon')}
 				${renderNumericCell('Min Tonight (°C)', row.min_tonight, 'data-twodaytable-min-tonight')}
@@ -1635,24 +1579,6 @@ function initializeTwoDayTemperatureTableFields(overlay) {
 			? defaults
 			: [{ area: '', max_this_afternoon: '', min_tonight: '', max_tomorrow: '', min_tomorrow: '' }]
 		renderTwoDayTemperatureTable(wrapper, rows)
-
-		wrapper.addEventListener('change', (event) => {
-			const select = event.target.closest('[data-twodaytable-area-select]')
-			if (!(select instanceof HTMLSelectElement)) {
-				return
-			}
-
-			const row = select.closest('[data-twodaytable-row]')
-			const customInput = row?.querySelector('[data-twodaytable-area-custom]')
-			if (!(customInput instanceof HTMLInputElement)) {
-				return
-			}
-
-			customInput.hidden = select.value !== CUSTOM_SELECT_VALUE
-			if (customInput.hidden) {
-				customInput.value = ''
-			}
-		})
 
 		wrapper.addEventListener('click', (event) => {
 			const addButton = event.target.closest('[data-twodaytable-add]')

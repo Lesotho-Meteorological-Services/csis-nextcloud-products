@@ -215,7 +215,6 @@
 .csis-product-form__driverlist-add:focus-visible,
 .csis-product-form__driver-description:focus-visible,
 .csis-product-form__temperaturetable-select:focus-visible,
-.csis-product-form__temperaturetable-custom:focus-visible,
 .csis-product-form__temperaturetable-number:focus-visible,
 .csis-product-form__temperaturetable-add:focus-visible,
 .csis-product-form__temperaturetable-remove:focus-visible,
@@ -396,7 +395,6 @@
 }
 
 .csis-product-form__temperaturetable-select:hover,
-.csis-product-form__temperaturetable-custom:hover,
 .csis-product-form__temperaturetable-number:hover {
 	border-color: var(--csis-border-strong);
 }
@@ -975,7 +973,6 @@
 }
 
 .csis-product-form__temperaturetable-select,
-.csis-product-form__temperaturetable-custom,
 .csis-product-form__temperaturetable-number {
 	width: 100%;
 	padding: 7px 10px;
@@ -985,10 +982,6 @@
 	color: var(--csis-text);
 	font-size: 13px;
 	line-height: 1.35;
-}
-
-.csis-product-form__temperaturetable-custom {
-	margin-top: 6px;
 }
 
 .csis-product-form__temperaturetable-row-actions {
@@ -1794,7 +1787,6 @@
 }
 
 .csis-product-form__temperaturetable-select,
-.csis-product-form__temperaturetable-custom,
 .csis-product-form__temperaturetable-number,
 .csis-product-form__dailyentry-field input,
 .csis-product-form__dailyentry-field textarea,
@@ -1820,17 +1812,12 @@
 	line-height: normal;
 }
 
-.csis-product-form__temperaturetable-custom {
-	margin-top: 2px;
-}
-
 .csis-product-form__dailyentry-field textarea,
 .csis-product-form__driver-description {
 	min-height: 96px;
 }
 
 .csis-product-form__temperaturetable-select:focus-visible,
-.csis-product-form__temperaturetable-custom:focus-visible,
 .csis-product-form__temperaturetable-number:focus-visible,
 .csis-product-form__dailyentry-field input:focus-visible,
 .csis-product-form__dailyentry-field textarea:focus-visible,
