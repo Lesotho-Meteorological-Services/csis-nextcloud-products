@@ -112,6 +112,17 @@ class StructuredProductRegistry {
 		'Semonkong',
 	];
 
+	private const NCOF_SECTOR_OPTIONS = [
+		'Agriculture and food security',
+		'Water resources',
+		'Disaster risk reduction',
+		'Health',
+		'Energy',
+		'Transport and infrastructure',
+		'Livestock',
+		'Environment and ecosystems',
+	];
+
 	public function has(string $type): bool {
 		return $this->get($type) !== null;
 	}
@@ -120,11 +131,21 @@ class StructuredProductRegistry {
 	 * @return array<string, mixed>|null
 	 */
 	public function get(string $type): ?array {
-		$today = (new \DateTimeImmutable('today'))->format('Y-m-d');
-		$currentYear = (int)(new \DateTimeImmutable('today'))->format('Y');
+		$todayDate = new \DateTimeImmutable('today');
+		$today = $todayDate->format('Y-m-d');
+		$tomorrow = $todayDate->modify('+1 day')->format('Y-m-d');
+		$weekEnd = $todayDate->modify('+6 days')->format('Y-m-d');
+		$currentYear = (int)$todayDate->format('Y');
+		$currentMonth = (int)$todayDate->format('n');
+		$currentSeason = $currentMonth >= 7
+			? sprintf('%d/%d', $currentYear, $currentYear + 1)
+			: sprintf('%d/%d', $currentYear - 1, $currentYear);
+		[$dekadStartDate, $dekadEndDate] = $this->dekadBounds($todayDate);
+		[$reviewStartDate, $reviewEndDate] = $this->dekadBounds($dekadStartDate->modify('-1 day'));
 		$monthOptions = $this->monthOptions();
 		$yearOptions = $this->yearOptions($currentYear - 5, $currentYear + 2);
 		$forecastYearOptions = $this->forecastYearOptions($currentYear - 1, $currentYear + 2);
+		$forecastPeriodOptions = $this->forecastPeriodOptions($currentYear);
 
 		$definitions = [
 			'agromet_dekadal' => [
@@ -151,19 +172,26 @@ class StructuredProductRegistry {
 						'label' => 'Period start',
 						'type' => 'date',
 						'required' => true,
+						'default' => $dekadStartDate->format('Y-m-d'),
 					],
 					[
 						'name' => 'period_end',
 						'label' => 'Period end',
 						'type' => 'date',
 						'required' => true,
+						'default' => $dekadEndDate->format('Y-m-d'),
 					],
 					[
 						'name' => 'season',
 						'label' => 'Season',
-						'type' => 'text',
+						'type' => 'select',
 						'required' => true,
-						'placeholder' => '2025/2026',
+						'default' => $currentSeason,
+						'allowCustom' => true,
+						'customOptionLabel' => 'Other season',
+						'customPlaceholder' => 'Enter a season, for example 2025/2026',
+						'helperText' => 'Select the agricultural season or enter a custom season.',
+						'options' => $forecastYearOptions,
 					],
 					[
 						'name' => 'issue_date',
@@ -185,12 +213,14 @@ class StructuredProductRegistry {
 						'label' => 'Review period start',
 						'type' => 'date',
 						'required' => true,
+						'default' => $reviewStartDate->format('Y-m-d'),
 					],
 					[
 						'name' => 'review_period_end',
 						'label' => 'Review period end',
 						'type' => 'date',
 						'required' => true,
+						'default' => $reviewEndDate->format('Y-m-d'),
 					],
 					[
 						'name' => 'highlights',
@@ -263,9 +293,10 @@ class StructuredProductRegistry {
 					],
 					[
 						'name' => 'forecast_valid_time_mode',
-						'type' => 'select',
+						'type' => 'segmented',
 						'label' => 'Forecast valid time range',
 						'required' => true,
+						'default' => self::MORNING_FORECAST_VALID_TIMES[0],
 						'helperText' => 'Choose a standard valid period or enter a custom time range.',
 						'options' => [
 							...$this->mapOptions(self::MORNING_FORECAST_VALID_TIMES),
@@ -379,18 +410,21 @@ class StructuredProductRegistry {
 						'label' => 'Forecast valid until date',
 						'type' => 'date',
 						'required' => true,
+						'default' => $tomorrow,
 					],
 					[
 						'name' => 'forecast_valid_until_time',
 						'label' => 'Forecast valid until time',
 						'type' => 'time',
 						'required' => true,
+						'default' => '18:00:00',
 					],
 					[
 						'name' => 'today_date',
 						'label' => 'Today date',
 						'type' => 'date',
 						'required' => true,
+						'default' => $today,
 					],
 					[
 						'name' => 'today_description_english',
@@ -405,6 +439,7 @@ class StructuredProductRegistry {
 						'label' => 'Tomorrow date',
 						'type' => 'date',
 						'required' => true,
+						'default' => $tomorrow,
 					],
 					[
 						'name' => 'tomorrow_description_english',
@@ -419,6 +454,7 @@ class StructuredProductRegistry {
 						'label' => 'Kajeno date',
 						'type' => 'date',
 						'required' => true,
+						'default' => $today,
 					],
 					[
 						'name' => 'kajeno_description_sesotho',
@@ -433,6 +469,7 @@ class StructuredProductRegistry {
 						'label' => 'Hosane date',
 						'type' => 'date',
 						'required' => true,
+						'default' => $tomorrow,
 					],
 					[
 						'name' => 'hosane_description_sesotho',
@@ -518,12 +555,14 @@ class StructuredProductRegistry {
 						'label' => 'Weekly period start',
 						'type' => 'date',
 						'required' => true,
+						'default' => $today,
 					],
 					[
 						'name' => 'weekly_period_end',
 						'label' => 'Weekly period end',
 						'type' => 'date',
 						'required' => true,
+						'default' => $weekEnd,
 					],
 					[
 						'name' => 'weekly_summary',
@@ -662,12 +701,9 @@ class StructuredProductRegistry {
 					[
 						'name' => 'confidence_level',
 						'label' => 'Confidence level',
-						'type' => 'select',
+						'type' => 'segmented',
 						'required' => true,
-						'allowCustom' => true,
-						'customOptionLabel' => 'Add custom value',
-						'customPlaceholder' => 'Add a custom confidence label',
-						'helperText' => 'Select the confidence level for the seasonal outlook, or add a custom label if needed.',
+						'helperText' => 'Select the forecast confidence level.',
 						'options' => $this->mapOptions(self::CONFIDENCE_LEVEL_OPTIONS),
 					],
 					[
@@ -762,10 +798,13 @@ class StructuredProductRegistry {
 					[
 						'name' => 'forecast_period',
 						'label' => 'Forecast period',
-						'type' => 'text',
+						'type' => 'select',
 						'required' => true,
-						'placeholder' => 'e.g. February to April 2026',
-						'helperText' => 'Enter the outlook period exactly as it should appear in the report.',
+						'allowCustom' => true,
+						'customOptionLabel' => 'Other forecast period',
+						'customPlaceholder' => 'Enter the period exactly as it should appear',
+						'helperText' => 'Select a standard seasonal period or enter a custom reporting period.',
+						'options' => $forecastPeriodOptions,
 					],
 					[
 						'name' => 'introduction',
@@ -801,6 +840,7 @@ class StructuredProductRegistry {
 						'helperText' => 'Add each sector and its narrative impact. You can add or remove sectors as needed.',
 						'driverDescriptionLabel' => 'Impact description',
 						'driverDescriptionPlaceholder' => 'Describe the likely implications for this sector',
+						'options' => $this->mapOptions(self::NCOF_SECTOR_OPTIONS),
 					],
 					[
 						'name' => 'advisory_actions',
@@ -1003,6 +1043,9 @@ class StructuredProductRegistry {
 			}
 
 			$normalized = trim((string)$rawValue);
+			if ($type === 'time') {
+				$normalized = $this->normalizeTimeValue($normalized);
+			}
 			if ($required && $normalized === '') {
 				$errors[$name] = sprintf('%s is required.', $field['label']);
 			}
@@ -1011,15 +1054,15 @@ class StructuredProductRegistry {
 				$errors[$name] = sprintf('%s must be a valid date.', $field['label']);
 			}
 
-			if ($normalized !== '' && $type === 'time' && preg_match('/^\d{2}:\d{2}$/', $normalized) !== 1) {
-				$errors[$name] = sprintf('%s must be a valid time.', $field['label']);
+			if ($normalized !== '' && $type === 'time' && preg_match('/^(?:[01]\d|2[0-3]):[0-5]\d:[0-5]\d$/', $normalized) !== 1) {
+				$errors[$name] = sprintf('%s must be a valid time in HH:mm:ss format.', $field['label']);
 			}
 
 			if ($normalized !== '' && ($type === 'month' || $type === 'monthyear') && preg_match('/^\d{4}-\d{2}$/', $normalized) !== 1) {
 				$errors[$name] = sprintf('%s must be a valid month.', $field['label']);
 			}
 
-			if ($type === 'select' && $normalized !== '') {
+			if (($type === 'select' || $type === 'segmented') && $normalized !== '') {
 				$allowedOptions = array_column($field['options'] ?? [], 'value');
 				$allowCustom = (bool)($field['allowCustom'] ?? false);
 				if (!$allowCustom && !in_array($normalized, $allowedOptions, true)) {
@@ -1040,6 +1083,18 @@ class StructuredProductRegistry {
 		$reviewEnd = $values['review_period_end'] ?? null;
 		if (is_string($reviewStart) && is_string($reviewEnd) && $reviewStart !== '' && $reviewEnd !== '' && $reviewStart > $reviewEnd) {
 			$errors['review_period_end'] = 'Review period end must be on or after review period start.';
+		}
+
+		$weeklyStart = $values['weekly_period_start'] ?? null;
+		$weeklyEnd = $values['weekly_period_end'] ?? null;
+		if (is_string($weeklyStart) && is_string($weeklyEnd) && $weeklyStart !== '' && $weeklyEnd !== '' && $weeklyStart > $weeklyEnd) {
+			$errors['weekly_period_end'] = 'Weekly period end must be on or after weekly period start.';
+		}
+
+		$todayDate = $values['today_date'] ?? null;
+		$tomorrowDate = $values['tomorrow_date'] ?? null;
+		if (is_string($todayDate) && is_string($tomorrowDate) && $todayDate !== '' && $tomorrowDate !== '' && $todayDate > $tomorrowDate) {
+			$errors['tomorrow_date'] = 'Tomorrow date must be on or after today date.';
 		}
 
 		if (($definition['type'] ?? '') === 'climate_seasonal') {
@@ -1604,6 +1659,15 @@ class StructuredProductRegistry {
 		return $normalizedMode;
 	}
 
+	private function normalizeTimeValue(string $value): string {
+		$normalized = trim($value);
+		if (preg_match('/^\d{2}:\d{2}$/', $normalized) === 1) {
+			return $normalized . ':00';
+		}
+
+		return $normalized;
+	}
+
 	/**
 	 * @param array<int, array{name: string, description: string}> $drivers
 	 */
@@ -1816,6 +1880,31 @@ class StructuredProductRegistry {
 	}
 
 	/**
+	 * @return array{0: \DateTimeImmutable, 1: \DateTimeImmutable}
+	 */
+	private function dekadBounds(\DateTimeImmutable $date): array {
+		$day = (int)$date->format('j');
+		if ($day <= 10) {
+			return [
+				$date->setDate((int)$date->format('Y'), (int)$date->format('n'), 1),
+				$date->setDate((int)$date->format('Y'), (int)$date->format('n'), 10),
+			];
+		}
+
+		if ($day <= 20) {
+			return [
+				$date->setDate((int)$date->format('Y'), (int)$date->format('n'), 11),
+				$date->setDate((int)$date->format('Y'), (int)$date->format('n'), 20),
+			];
+		}
+
+		return [
+			$date->setDate((int)$date->format('Y'), (int)$date->format('n'), 21),
+			$date->modify('last day of this month'),
+		];
+	}
+
+	/**
 	 * @return array<int, array{label: string, value: string}>
 	 */
 	private function yearOptions(int $startYear, int $endYear): array {
@@ -1825,6 +1914,27 @@ class StructuredProductRegistry {
 				'label' => (string)$year,
 				'value' => (string)$year,
 			];
+		}
+
+		return $options;
+	}
+
+	/**
+	 * @return array<int, array{label: string, value: string}>
+	 */
+	private function forecastPeriodOptions(int $currentYear): array {
+		$options = [];
+		foreach ([$currentYear, $currentYear + 1] as $year) {
+			foreach (self::FORECAST_SEASON_OPTIONS as $season) {
+				$yearLabel = in_array($season, ['NDJ', 'DJF'], true)
+					? sprintf('%d/%d', $year, $year + 1)
+					: (string)$year;
+				$value = sprintf('%s %s', $season, $yearLabel);
+				$options[] = [
+					'label' => $value,
+					'value' => $value,
+				];
+			}
 		}
 
 		return $options;

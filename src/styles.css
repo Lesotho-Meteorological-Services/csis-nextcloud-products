@@ -1240,3 +1240,754 @@
 	background: var(--color-background-hover, rgba(12, 84, 145, 0.08)) !important;
 	outline: none;
 }
+
+/* Nextcloud-aligned structured product modal refresh. */
+.csis-product-form {
+	--csis-surface: var(--color-main-background, #fff);
+	--csis-surface-subtle: var(--color-background-hover, #f5f5f5);
+	--csis-surface-muted: var(--color-background-dark, #ededed);
+	--csis-border: var(--color-border, #d8d8d8);
+	--csis-border-strong: var(--color-border-maxcontrast, #8c8c8c);
+	--csis-text: var(--color-main-text, #222);
+	--csis-text-muted: var(--color-text-maxcontrast, #6b6b6b);
+	--csis-title: var(--color-main-text, #222);
+	--csis-accent: var(--color-primary-element, #00679e);
+	--csis-accent-soft: var(--color-primary-element-light, #e7f2f8);
+	--csis-accent-border: color-mix(in srgb, var(--color-primary-element, #00679e) 28%, transparent);
+	--csis-danger: var(--color-error, #c62828);
+	padding: 24px;
+	font-family: system-ui, -apple-system, "Segoe UI", Roboto, Oxygen-Sans, Cantarell, Ubuntu, "Helvetica Neue", Arial, sans-serif;
+}
+
+.csis-product-form__backdrop {
+	background: color-mix(in srgb, #101820 54%, transparent);
+	backdrop-filter: blur(2px);
+}
+
+.csis-product-form__dialog {
+	display: flex;
+	flex-direction: column;
+	width: min(var(--csis-modal-width, 720px), calc(100vw - 48px));
+	max-height: min(900px, calc(100vh - 48px));
+	overflow: hidden;
+	border-color: var(--csis-border);
+	border-radius: var(--border-radius-container-large, 12px);
+	background: var(--csis-surface);
+	box-shadow: 0 18px 48px rgba(0, 0, 0, 0.22);
+}
+
+.csis-product-form__header {
+	position: relative;
+	flex: 0 0 auto;
+	padding: 20px 64px 18px 24px;
+	border-bottom-color: var(--csis-border);
+	background: var(--csis-surface);
+}
+
+.csis-product-form__header-actions {
+	position: absolute;
+	z-index: 2;
+	top: 16px;
+	right: 16px;
+	margin: 0;
+}
+
+.csis-product-form__back {
+	display: none;
+}
+
+.csis-product-form__icon-button {
+	width: var(--default-clickable-area, 44px);
+	height: var(--default-clickable-area, 44px);
+	border: 0;
+	border-radius: 50%;
+	background: transparent;
+	color: var(--csis-text);
+}
+
+.csis-product-form__icon-button:hover,
+.csis-product-form__icon-button:focus-visible {
+	background: var(--color-background-hover, #f2f2f2);
+}
+
+.csis-product-form__icon-button span {
+	font-size: 22px;
+	font-weight: 400;
+}
+
+.csis-product-form__brand {
+	display: grid;
+	grid-template-columns: 46px minmax(0, 1fr);
+	grid-template-rows: auto auto auto;
+	column-gap: 14px;
+	row-gap: 1px;
+	align-items: center;
+	text-align: left;
+}
+
+.csis-product-form__logo {
+	grid-column: 1;
+	grid-row: 1 / 4;
+	width: 46px;
+	height: 46px;
+}
+
+.csis-product-form__eyebrow,
+.csis-product-form__header h2,
+.csis-product-form__intro {
+	grid-column: 2;
+}
+
+.csis-product-form__eyebrow {
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.035em;
+	text-transform: none;
+}
+
+.csis-product-form__header h2 {
+	font-size: 22px;
+	font-weight: 650;
+	line-height: 1.25;
+}
+
+.csis-product-form__intro {
+	max-width: none;
+	font-size: 13px;
+	line-height: 1.4;
+}
+
+.csis-product-form__form {
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: column;
+	min-height: 0;
+	padding: 0;
+}
+
+.csis-product-form__body {
+	flex: 1 1 auto;
+	min-height: 0;
+	padding: 24px;
+	overflow: auto;
+	scrollbar-gutter: stable;
+}
+
+.csis-product-form__section + .csis-product-form__section {
+	margin-top: 30px;
+	padding-top: 28px;
+	border-top-color: var(--csis-border);
+}
+
+.csis-product-form__section-header {
+	margin-bottom: 16px;
+}
+
+.csis-product-form__section-title {
+	margin-bottom: 4px;
+	font-size: 17px;
+	font-weight: 650;
+	line-height: 1.3;
+}
+
+.csis-product-form__section-description {
+	font-size: 13px;
+	line-height: 1.45;
+}
+
+.csis-product-form__section-fields {
+	gap: 18px 22px;
+}
+
+.csis-product-form__section-fields--stack {
+	grid-template-columns: minmax(0, 1fr);
+}
+
+.csis-product-form__field {
+	gap: 7px;
+}
+
+.csis-product-form__label {
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 1.35;
+}
+
+.csis-product-form__field input,
+.csis-product-form__field select,
+.csis-product-form__select-custom-input,
+.csis-product-form__monthyear select,
+.csis-product-form__field textarea {
+	min-height: var(--default-clickable-area, 44px);
+	box-sizing: border-box;
+	padding: 10px 14px;
+	border-width: 2px;
+	border-color: var(--color-border-maxcontrast, var(--csis-border));
+	border-radius: var(--border-radius-element, 8px);
+	font-family: inherit;
+	font-size: 15px;
+}
+
+.csis-product-form__field select,
+.csis-product-form__monthyear select {
+	padding-inline-end: 42px;
+}
+
+.csis-product-form__field select option,
+.csis-product-form__monthyear select option,
+.csis-product-form__temperaturetable-select option {
+	padding: 8px 12px;
+	line-height: 1.4;
+}
+
+.csis-product-form__field textarea {
+	min-height: 112px;
+}
+
+.csis-product-form__field input:focus-visible,
+.csis-product-form__field select:focus-visible,
+.csis-product-form__field textarea:focus-visible,
+.csis-product-form__multiselect-trigger:focus-visible,
+.csis-product-form__taglist-input:focus-visible {
+	border-color: var(--csis-accent);
+	outline: 2px solid var(--csis-accent);
+	outline-offset: 1px;
+	box-shadow: none;
+}
+
+.csis-product-form__field input[readonly] {
+	border-color: var(--csis-border);
+	background: var(--color-background-dark, var(--csis-surface-muted));
+	color: var(--csis-text);
+	opacity: 0.82;
+}
+
+.csis-product-form__help,
+.csis-product-form__error {
+	font-size: 13px;
+	line-height: 1.4;
+}
+
+.csis-product-form__taglist-shell,
+.csis-product-form__driverlist-shell {
+	gap: 12px;
+	padding: 0;
+	border: 0;
+	background: transparent;
+}
+
+.csis-product-form__taglist-values {
+	min-height: 0;
+	gap: 6px;
+}
+
+.csis-product-form__taglist-empty {
+	width: 100%;
+	padding: 10px 12px;
+	border: 1px dashed var(--csis-border);
+	border-radius: var(--border-radius-element, 8px);
+	background: var(--csis-surface-subtle);
+	font-size: 13px;
+}
+
+.csis-product-form__taglist-entry {
+	gap: 8px;
+}
+
+.csis-product-form__taglist-input,
+.csis-product-form__driverlist-input {
+	height: var(--default-clickable-area, 44px);
+	padding: 9px 12px;
+	border-width: 2px;
+	border-color: var(--color-border-maxcontrast, var(--csis-border));
+	border-radius: var(--border-radius-element, 8px);
+	background: var(--csis-surface);
+	font-family: inherit;
+	font-size: 15px;
+}
+
+.csis-product-form__taglist-add,
+.csis-product-form__driverlist-add {
+	height: var(--default-clickable-area, 44px);
+	padding: 0 16px;
+	border: 0;
+	border-radius: var(--border-radius-element, 8px);
+	background: var(--color-primary-element, var(--csis-accent));
+	color: var(--color-primary-element-text, #fff);
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.csis-product-form__taglist-add:hover,
+.csis-product-form__driverlist-add:hover {
+	background: var(--color-primary-element-hover, var(--csis-accent));
+}
+
+.csis-product-form__suggestions {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.csis-product-form__suggestions-label {
+	margin: 0;
+	color: var(--csis-text-muted);
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.csis-product-form__taglist-options,
+.csis-product-form__driverlist-options {
+	gap: 7px;
+	padding: 0;
+}
+
+.csis-product-form__taglist-option,
+.csis-product-form__driver-option {
+	min-height: 32px;
+	padding: 6px 11px;
+	border-color: transparent;
+	border-radius: 999px;
+	background: var(--color-primary-element-light, var(--csis-accent-soft));
+	color: var(--color-primary-element-light-text, var(--csis-text));
+	font-size: 13px;
+	font-weight: 600;
+}
+
+.csis-product-form__taglist-option:hover,
+.csis-product-form__driver-option:hover {
+	border-color: color-mix(in srgb, var(--csis-accent) 32%, transparent);
+	background: var(--color-primary-element-light-hover, var(--csis-accent-soft));
+}
+
+.csis-product-form__tag {
+	min-height: 30px;
+	padding: 4px 10px;
+	border-color: color-mix(in srgb, var(--csis-accent) 22%, transparent);
+	background: var(--color-primary-element-light, var(--csis-accent-soft));
+	color: var(--color-primary-element-light-text, var(--csis-text));
+	font-size: 13px;
+}
+
+.csis-product-form__actions {
+	position: relative;
+	flex: 0 0 auto;
+	margin: 0;
+	padding: 14px 24px;
+	border-top: 1px solid var(--csis-border);
+	background: var(--csis-surface);
+	box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.04);
+}
+
+.csis-product-form__actions .button {
+	min-height: var(--default-clickable-area, 44px);
+	padding: 0 18px;
+	border-radius: var(--border-radius-element, 8px);
+	font-family: inherit;
+	font-size: 14px;
+}
+
+.csis-product-form__form-message {
+	flex: 0 0 auto;
+	margin: 16px 24px 0;
+	padding: 12px 14px;
+	border-inline-start: 4px solid var(--color-error, var(--csis-danger));
+	border-radius: var(--border-radius-element, 8px);
+	background: rgba(var(--color-error-rgb, 198, 40, 40), 0.12);
+	color: var(--color-main-text, var(--csis-text));
+	font-size: 13px;
+	line-height: 1.45;
+}
+
+.csis-product-form__progress {
+	flex: 0 0 auto;
+	padding: 12px 24px;
+	border-bottom: 1px solid var(--csis-border);
+	background: var(--csis-surface-subtle);
+}
+
+.csis-product-form__progress-copy {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	margin-bottom: 7px;
+	color: var(--csis-text-muted);
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.csis-product-form__progress-track {
+	height: 4px;
+	border-radius: 999px;
+	background: var(--color-border, var(--csis-border));
+	overflow: hidden;
+}
+
+.csis-product-form__progress-track span {
+	display: block;
+	width: 0;
+	height: 100%;
+	border-radius: inherit;
+	background: var(--color-primary-element, var(--csis-accent));
+	transition: width 180ms ease;
+}
+
+.csis-product-form__segments {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+	gap: 8px;
+}
+
+.csis-product-form__segment {
+	position: relative;
+	min-width: 0;
+}
+
+.csis-product-form__segment input {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: 0;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.csis-product-form__segment span {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: var(--default-clickable-area, 44px);
+	padding: 8px 12px;
+	border: 2px solid var(--color-border-maxcontrast, var(--csis-border));
+	border-radius: var(--border-radius-element, 8px);
+	background: var(--csis-surface);
+	color: var(--csis-text);
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 1.25;
+	text-align: center;
+	cursor: pointer;
+	transition: border-color 120ms ease, background 120ms ease, color 120ms ease;
+}
+
+.csis-product-form__segment input:checked + span {
+	border-color: var(--color-primary-element, var(--csis-accent));
+	background: var(--color-primary-element-light, var(--csis-accent-soft));
+	color: var(--color-primary-element-light-text, var(--csis-text));
+}
+
+.csis-product-form__segment input:focus-visible + span {
+	outline: 2px solid var(--color-primary-element, var(--csis-accent));
+	outline-offset: 2px;
+}
+
+.csis-product-form__field.has-error .csis-product-form__segment span {
+	border-color: var(--color-error, var(--csis-danger));
+}
+
+.csis-product-form__multiselect-trigger {
+	min-height: var(--default-clickable-area, 44px);
+	padding: 7px 12px;
+	border-width: 2px;
+	border-color: var(--color-border-maxcontrast, var(--csis-border));
+	border-radius: var(--border-radius-element, 8px);
+	font-size: 14px;
+}
+
+.csis-product-form__multiselect-menu {
+	top: calc(100% + 6px);
+	padding: 8px;
+	border-radius: var(--border-radius-container, 10px);
+	box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+}
+
+.csis-product-form__multiselect-search {
+	height: var(--default-clickable-area, 44px);
+	padding: 9px 12px;
+	border-width: 2px;
+	border-color: var(--color-border-maxcontrast, var(--csis-border));
+	border-radius: var(--border-radius-element, 8px);
+	background: var(--csis-surface);
+	font-family: inherit;
+	font-size: 14px;
+}
+
+.csis-product-form__multiselect-options {
+	max-height: 240px;
+	margin-top: 4px;
+}
+
+.csis-product-form__option-button {
+	min-height: 40px;
+	padding: 8px 10px;
+	border-radius: var(--border-radius-element, 8px);
+	font-size: 14px;
+}
+
+.csis-product-form__chip {
+	min-height: 28px;
+	padding: 4px 9px;
+	border-color: color-mix(in srgb, var(--csis-accent) 22%, transparent);
+	background: var(--color-primary-element-light, var(--csis-accent-soft));
+	color: var(--color-primary-element-light-text, var(--csis-text));
+	font-size: 12px;
+}
+
+.csis-product-form__temperaturetable-shell,
+.csis-product-form__dailyentries-shell {
+	gap: 12px;
+	padding: 0;
+	border: 0;
+	background: transparent;
+}
+
+.csis-product-form__temperaturetable-header,
+.csis-product-form__twodaytable-header {
+	padding: 0 14px;
+	font-size: 12px;
+}
+
+.csis-product-form__temperaturetable-row,
+.csis-product-form__dailyentry-card,
+.csis-product-form__driver-card {
+	padding: 16px;
+	border-color: var(--csis-border);
+	border-radius: var(--border-radius-container, 10px);
+	background: var(--csis-surface-subtle);
+}
+
+.csis-product-form__twodaytable-header {
+	display: none;
+}
+
+.csis-product-form__twodaytable-row {
+	position: relative;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 14px;
+	padding: 16px;
+	border-color: var(--csis-border);
+	border-radius: var(--border-radius-container, 10px);
+	background: var(--csis-surface-subtle);
+}
+
+.csis-product-form__twodaytable-area {
+	grid-column: 1 / -1;
+}
+
+.csis-product-form__twodaytable-row .csis-product-form__temperaturetable-row-actions {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+.csis-product-form__temperaturetable-label,
+.csis-product-form__driver-description-label {
+	font-size: 13px;
+	font-weight: 600;
+	color: var(--csis-text);
+}
+
+.csis-product-form__temperaturetable-select,
+.csis-product-form__temperaturetable-custom,
+.csis-product-form__temperaturetable-number,
+.csis-product-form__dailyentry-field input,
+.csis-product-form__dailyentry-field textarea,
+.csis-product-form__driver-description {
+	min-height: var(--default-clickable-area, 44px);
+	box-sizing: border-box;
+	padding: 10px 14px;
+	border-width: 2px;
+	border-color: var(--color-border-maxcontrast, var(--csis-border));
+	border-radius: var(--border-radius-element, 8px);
+	background: var(--csis-surface);
+	font-family: inherit;
+	font-size: 14px;
+	line-height: 1.4;
+}
+
+.csis-product-form__temperaturetable-select {
+	padding-inline-end: 42px;
+}
+
+.csis-product-form__temperaturetable-custom {
+	margin-top: 2px;
+}
+
+.csis-product-form__dailyentry-field textarea,
+.csis-product-form__driver-description {
+	min-height: 96px;
+}
+
+.csis-product-form__temperaturetable-select:focus-visible,
+.csis-product-form__temperaturetable-custom:focus-visible,
+.csis-product-form__temperaturetable-number:focus-visible,
+.csis-product-form__dailyentry-field input:focus-visible,
+.csis-product-form__dailyentry-field textarea:focus-visible,
+.csis-product-form__driver-description:focus-visible {
+	border-color: var(--csis-accent);
+	outline: 2px solid var(--csis-accent);
+	outline-offset: 1px;
+	box-shadow: none;
+}
+
+.csis-product-form__temperaturetable-add {
+	min-height: var(--default-clickable-area, 44px);
+	padding: 0 16px;
+	border-color: var(--csis-border);
+	border-radius: var(--border-radius-element, 8px);
+	background: var(--csis-surface);
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.csis-product-form__temperaturetable-add:hover {
+	background: var(--color-background-hover, var(--csis-surface-subtle));
+}
+
+.csis-product-form__temperaturetable-remove,
+.csis-product-form__driver-remove,
+.csis-product-form__tag-remove {
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background: transparent;
+	font-size: 18px;
+}
+
+.csis-product-form__temperaturetable-remove:hover,
+.csis-product-form__driver-remove:hover,
+.csis-product-form__tag-remove:hover {
+	background: var(--color-background-hover, rgba(0, 0, 0, 0.08));
+}
+
+.csis-product-form__driverlist-values,
+.csis-product-form__temperaturetable-values,
+.csis-product-form__twodaytable-values,
+.csis-product-form__dailyentries-values {
+	gap: 12px;
+}
+
+.csis-product-form__driverlist-empty,
+.csis-product-form__temperaturetable-empty,
+.csis-product-form__dailyentries-empty {
+	padding: 12px 14px;
+	border: 1px dashed var(--csis-border);
+	border-radius: var(--border-radius-element, 8px);
+	background: var(--csis-surface-subtle);
+	font-size: 13px;
+}
+
+.csis-product-form__driver-card-header,
+.csis-product-form__dailyentry-header {
+	margin-bottom: 12px;
+}
+
+.csis-product-form__driver-name,
+.csis-product-form__dailyentry-title {
+	font-size: 14px;
+	font-weight: 650;
+}
+
+.csis-product-form__dailyentry-grid {
+	grid-template-columns: minmax(0, 190px) minmax(0, 1fr);
+	gap: 14px;
+}
+
+@media (max-width: 720px) {
+	.csis-product-form {
+		align-items: stretch;
+		padding: 0;
+	}
+
+	.csis-product-form__dialog {
+		width: 100vw;
+		max-height: 100dvh;
+		height: 100dvh;
+		border: 0;
+		border-radius: 0;
+	}
+
+	.csis-product-form__header {
+		padding: 16px 58px 14px 16px;
+	}
+
+	.csis-product-form__header-actions {
+		top: 10px;
+		right: 10px;
+	}
+
+	.csis-product-form__brand {
+		grid-template-columns: 40px minmax(0, 1fr);
+		column-gap: 11px;
+	}
+
+	.csis-product-form__logo {
+		width: 40px;
+		height: 40px;
+	}
+
+	.csis-product-form__eyebrow {
+		display: none;
+	}
+
+	.csis-product-form__logo {
+		grid-row: 1 / 3;
+	}
+
+	.csis-product-form__header h2,
+	.csis-product-form__intro {
+		grid-column: 2;
+	}
+
+	.csis-product-form__header h2 {
+		font-size: 19px;
+	}
+
+	.csis-product-form__body {
+		padding: 20px 16px;
+	}
+
+	.csis-product-form__section-fields--grid {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.csis-product-form__actions {
+		padding: 12px 16px;
+	}
+
+	.csis-product-form__form-message {
+		margin: 12px 16px 0;
+	}
+
+	.csis-product-form__progress {
+		padding: 10px 16px;
+	}
+
+	.csis-product-form__segments {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.csis-product-form__taglist-entry,
+	.csis-product-form__driverlist-entry,
+	.csis-product-form__temperaturetable-row,
+	.csis-product-form__twodaytable-row,
+	.csis-product-form__dailyentry-grid {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.csis-product-form__taglist-entry,
+	.csis-product-form__driverlist-entry {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.csis-product-form__temperaturetable-header {
+		display: none;
+	}
+
+	.csis-product-form__twodaytable-temp,
+	.csis-product-form__twodaytable-area {
+		grid-column: 1;
+	}
+}

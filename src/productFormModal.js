@@ -39,6 +39,19 @@ const SYNTHETIC_CONTENTS_FIELD = {
 }
 
 const CUSTOM_SELECT_VALUE = '__custom__'
+const PRODUCT_ACTION_LABELS = {
+	weather: 'Generate forecast',
+	agromet: 'Generate bulletin',
+	climate: 'Generate report',
+}
+const PRODUCT_SUBTITLES = {
+	morning: 'Create the morning forecast and expected maximum temperatures.',
+	two_day: 'Create the bilingual two-day forecast and station temperatures.',
+	weekly: 'Create the weekly outlook with one structured entry per day.',
+	agromet_dekadal: 'Create a dekadal agrometeorological bulletin.',
+	climate_seasonal: 'Create a seasonal climate outlook for the selected forecast period.',
+	climate_ncof_report: 'Create an initial National Climate Outlook Forum report.',
+}
 const SEASON_REVIEW_PERIODS = {
 	JFM: { startMonth: '01', endMonth: '03', startYearOffset: 0, endYearOffset: 0 },
 	FMA: { startMonth: '02', endMonth: '04', startYearOffset: 0, endYearOffset: 0 },
@@ -137,6 +150,7 @@ function escapeHtml(value) {
 
 function enhanceDefinition(definition) {
 	const fields = [...(definition.fields || [])]
+	const subtitle = PRODUCT_SUBTITLES[definition.type] || definition.subtitle
 
 	if (definition.type === 'agromet_dekadal' && !fields.some((field) => field.name === 'highlights')) {
 		const weatherDescriptionIndex = fields.findIndex((field) => field.name === 'weather_description')
@@ -174,6 +188,7 @@ function enhanceDefinition(definition) {
 	if (Array.isArray(definition.sections) && definition.sections.length > 0) {
 		return {
 			...definition,
+			subtitle,
 			fields: normalizedFields,
 			sections: definition.sections.map((section) => ({
 				...section,
@@ -185,6 +200,7 @@ function enhanceDefinition(definition) {
 	if (definition.type !== 'agromet_dekadal') {
 		return {
 			...definition,
+			subtitle,
 			fields: normalizedFields,
 			sections: [
 				{
@@ -202,19 +218,28 @@ function enhanceDefinition(definition) {
 
 	return {
 		...definition,
+		subtitle,
 		fields: normalizedFields,
 		sections: [
 			{
 				id: 'metadata',
-				title: 'Period & metadata',
-				description: 'Define the dekadal period, bulletin number, and review window.',
+				title: 'Period and metadata',
+				description: 'Define the bulletin and reporting period.',
 				layout: 'grid',
 				fields: pickFields([
 					'period_start',
 					'period_end',
 					'season',
-					'issue_date',
 					'bulletin_number',
+					'issue_date',
+				]),
+			},
+			{
+				id: 'review-period',
+				title: 'Review period',
+				description: 'Set the observation window covered by this bulletin.',
+				layout: 'grid',
+				fields: pickFields([
 					'review_period_start',
 					'review_period_end',
 				]),
@@ -222,7 +247,7 @@ function enhanceDefinition(definition) {
 			{
 				id: 'highlights',
 				title: 'Highlights',
-				description: 'Capture concise, high-level highlights.',
+				description: 'Add the most important expected conditions.',
 				layout: 'stack',
 				fields: pickFields(['highlights']),
 			},
@@ -252,7 +277,7 @@ function createFieldMarkup(field) {
 		? `data-show-when-field="${escapeHtml(field.showWhen.name)}" data-show-when-value="${escapeHtml(field.showWhen.equals)}"`
 		: ''
 
-	if (field.type === 'textarea' || field.type === 'taglist' || field.type === 'multiselect' || field.type === 'driverlist' || field.type === 'temperaturetable' || field.type === 'twodaytemperaturetable' || field.type === 'dailyentries') {
+	if (field.type === 'textarea' || field.type === 'taglist' || field.type === 'multiselect' || field.type === 'segmented' || field.type === 'driverlist' || field.type === 'temperaturetable' || field.type === 'twodaytemperaturetable' || field.type === 'dailyentries') {
 		fieldClasses.push('csis-product-form__field--full')
 	}
 
@@ -306,6 +331,31 @@ function createFieldMarkup(field) {
 				${helpText}
 				<p class="csis-product-form__error" hidden></p>
 			</label>
+		`
+	}
+
+	if (field.type === 'segmented') {
+		const options = (field.options || []).map((option, index) => `
+			<label class="csis-product-form__segment">
+				<input
+					type="radio"
+					name="${escapeHtml(field.name)}"
+					value="${escapeHtml(option.value)}"
+					${index === 0 ? 'data-segmented-first' : ''}
+				>
+				<span>${escapeHtml(option.label)}</span>
+			</label>
+		`).join('')
+
+		return `
+			<fieldset class="${fieldClasses.join(' ')} csis-product-form__fieldset" data-field="${escapeHtml(field.name)}">
+				<legend class="csis-product-form__label">${escapeHtml(field.label)} ${requiredMarker}</legend>
+				<div class="csis-product-form__segments" role="radiogroup" aria-label="${escapeHtml(field.label)}">
+					${options}
+				</div>
+				${helpText}
+				<p class="csis-product-form__error" hidden></p>
+			</fieldset>
 		`
 	}
 
@@ -443,8 +493,11 @@ function createFieldMarkup(field) {
 							</button>
 						</div>
 						${optionsMarkup !== '' ? `
-							<div class="csis-product-form__taglist-options" data-taglist-options>
-								${optionsMarkup}
+							<div class="csis-product-form__suggestions">
+								<p class="csis-product-form__suggestions-label">Suggested</p>
+								<div class="csis-product-form__taglist-options" data-taglist-options>
+									${optionsMarkup}
+								</div>
 							</div>
 						` : ''}
 					</div>
@@ -604,14 +657,20 @@ function createFieldMarkup(field) {
 				<span class="csis-product-form__label">${escapeHtml(field.label)} ${requiredMarker}</span>
 				<input
 					type="${escapeHtml(field.type || 'text')}"
-				name="${escapeHtml(field.name)}"
-				placeholder="${escapeHtml(field.placeholder || '')}"
-				${field.readOnly ? 'readonly' : ''}
-			>
+					name="${escapeHtml(field.name)}"
+					placeholder="${escapeHtml(field.placeholder || '')}"
+					${field.type === 'time' ? 'step="1"' : ''}
+					${field.readOnly ? 'readonly' : ''}
+				>
 			${helpText}
 			<p class="csis-product-form__error" hidden></p>
 		</label>
 	`
+}
+
+function normalizeTimeValue(value) {
+	const normalized = String(value || '').trim()
+	return /^\d{2}:\d{2}$/.test(normalized) ? `${normalized}:00` : normalized
 }
 
 function createSectionMarkup(section) {
@@ -760,8 +819,8 @@ function validateField(field, value) {
 		return `${field.label} must be a valid date.`
 	}
 
-	if (normalized !== '' && field.type === 'time' && !/^\d{2}:\d{2}$/.test(normalized)) {
-		return `${field.label} must be a valid time.`
+	if (normalized !== '' && field.type === 'time' && !/^(?:[01]\d|2[0-3]):[0-5]\d:[0-5]\d$/.test(normalizeTimeValue(normalized))) {
+		return `${field.label} must be a valid time in HH:mm:ss format.`
 	}
 
 	if (field.type === 'monthyear' && !/^\d{4}-\d{2}$/.test(normalized)) {
@@ -772,8 +831,15 @@ function validateField(field, value) {
 		return `${field.label} must be a valid month.`
 	}
 
-	if (field.type === 'select' && field.required && normalized === '') {
+	if ((field.type === 'select' || field.type === 'segmented') && field.required && normalized === '') {
 		return `${field.label} is required.`
+	}
+
+	if ((field.type === 'select' || field.type === 'segmented') && !field.allowCustom) {
+		const allowedValues = new Set((field.options || []).map((option) => option.value))
+		if (normalized !== '' && !allowedValues.has(normalized)) {
+			return `${field.label} must be one of the available choices.`
+		}
 	}
 
 	if (field.type === 'select' && field.allowCustom) {
@@ -1757,7 +1823,8 @@ function updateConditionalFields(overlay) {
 
 		const dependentField = wrapper.dataset.showWhenField || ''
 		const expectedValue = wrapper.dataset.showWhenValue || ''
-		const dependentInput = overlay.querySelector(`[name="${CSS.escape(dependentField)}"]`)
+		const dependentInput = overlay.querySelector(`[name="${CSS.escape(dependentField)}"]:checked`)
+			|| overlay.querySelector(`[name="${CSS.escape(dependentField)}"]`)
 		const shouldShow = dependentInput instanceof HTMLInputElement || dependentInput instanceof HTMLSelectElement || dependentInput instanceof HTMLTextAreaElement
 			? dependentInput.value === expectedValue
 			: false
@@ -1774,8 +1841,10 @@ function updateConditionalFields(overlay) {
 	}
 }
 
-export function showProductFormModal(rawDefinition) {
+export function showProductFormModal(rawDefinition, { onSubmit = null } = {}) {
 	const definition = enhanceDefinition(rawDefinition)
+	const previouslyFocusedElement = document.activeElement
+	const submitLabel = PRODUCT_ACTION_LABELS[definition.category] || 'Generate document'
 
 	return new Promise((resolve, reject) => {
 		const overlay = document.createElement('div')
@@ -1803,12 +1872,22 @@ export function showProductFormModal(rawDefinition) {
 					</div>
 				</div>
 				<form class="csis-product-form__form">
+					<div class="csis-product-form__progress" aria-live="polite">
+						<div class="csis-product-form__progress-copy">
+							<span data-progress-label>Required fields</span>
+							<span data-progress-count></span>
+						</div>
+						<div class="csis-product-form__progress-track" aria-hidden="true">
+							<span data-progress-bar></span>
+						</div>
+					</div>
+					<div class="csis-product-form__form-message" role="alert" hidden></div>
 					<div class="csis-product-form__body">
 						${definition.sections.map(createSectionMarkup).join('')}
 					</div>
 					<div class="csis-product-form__actions">
 						<button type="button" class="button button-vue-secondary csis-product-form__cancel">Cancel</button>
-						<button type="submit" class="button button-vue-primary csis-product-form__submit">Generate Report</button>
+						<button type="submit" class="button button-vue-primary csis-product-form__submit">${submitLabel}</button>
 					</div>
 				</form>
 			</div>
@@ -1821,6 +1900,9 @@ export function showProductFormModal(rawDefinition) {
 		const cancelButton = overlay.querySelector('.csis-product-form__cancel')
 		const closeButton = overlay.querySelector('.csis-product-form__close')
 		const backButton = overlay.querySelector('.csis-product-form__back')
+		const formMessage = overlay.querySelector('.csis-product-form__form-message')
+		const progressCount = overlay.querySelector('[data-progress-count]')
+		const progressBar = overlay.querySelector('[data-progress-bar]')
 		const destroyMultiselects = initializeMultiselectFields(overlay)
 		initializeTaglistFields(overlay)
 		initializeDriverListFields(overlay)
@@ -1834,6 +1916,9 @@ export function showProductFormModal(rawDefinition) {
 			document.removeEventListener('keydown', onKeyDown)
 			destroyMultiselects()
 			overlay.remove()
+			if (previouslyFocusedElement instanceof HTMLElement && document.contains(previouslyFocusedElement)) {
+				previouslyFocusedElement.focus()
+			}
 			if (result?.cancelled) {
 				reject(new Error('cancelled'))
 				return
@@ -1845,10 +1930,38 @@ export function showProductFormModal(rawDefinition) {
 			if (event.key === 'Escape') {
 				event.preventDefault()
 				close({ cancelled: true })
+				return
+			}
+
+			if (event.key === 'Tab') {
+				const focusableElements = Array.from(overlay.querySelectorAll(
+					'button:not([disabled]), input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+				)).filter((element) => element instanceof HTMLElement && !element.hidden && element.offsetParent !== null)
+				if (focusableElements.length === 0) {
+					return
+				}
+
+				const firstElement = focusableElements[0]
+				const lastElement = focusableElements[focusableElements.length - 1]
+				if (event.shiftKey && document.activeElement === firstElement) {
+					event.preventDefault()
+					lastElement.focus()
+				} else if (!event.shiftKey && document.activeElement === lastElement) {
+					event.preventDefault()
+					firstElement.focus()
+				}
 			}
 		}
 
 		document.addEventListener('keydown', onKeyDown)
+		requestAnimationFrame(() => {
+			const firstInput = overlay.querySelector('input:not([readonly]):not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([readonly]):not([disabled])')
+			if (firstInput instanceof HTMLElement) {
+				firstInput.focus()
+			} else {
+				closeButton?.focus()
+			}
+		})
 
 		const touchedFields = new Set()
 		const reviewFieldNames = new Set(['review_period_start', 'review_period_end'])
@@ -1865,6 +1978,15 @@ export function showProductFormModal(rawDefinition) {
 			wrapper.classList.toggle('has-error', hasVisibleError)
 			errorNode.hidden = !hasVisibleError
 			errorNode.textContent = hasVisibleError ? message : ''
+			errorNode.id = `csis-product-form-error-${fieldName}`
+			for (const control of wrapper.querySelectorAll('input, select, textarea, button')) {
+				control.setAttribute('aria-invalid', String(hasVisibleError))
+				if (hasVisibleError) {
+					control.setAttribute('aria-describedby', errorNode.id)
+				} else if (control.getAttribute('aria-describedby') === errorNode.id) {
+					control.removeAttribute('aria-describedby')
+				}
+			}
 		}
 
 		const collectValues = () => {
@@ -1914,6 +2036,12 @@ export function showProductFormModal(rawDefinition) {
 					continue
 				}
 
+				if (field.type === 'segmented') {
+					const selectedInput = overlay.querySelector(`[name="${CSS.escape(field.name)}"]:checked`)
+					values[field.name] = selectedInput?.value ?? ''
+					continue
+				}
+
 				const input = overlay.querySelector(`[name="${CSS.escape(field.name)}"]`)
 				if (field.type === 'select' && field.allowCustom) {
 					const wrapper = overlay.querySelector(`[data-field="${CSS.escape(field.name)}"]`)
@@ -1925,7 +2053,9 @@ export function showProductFormModal(rawDefinition) {
 					continue
 				}
 
-				values[field.name] = input?.value ?? ''
+				values[field.name] = field.type === 'time'
+					? normalizeTimeValue(input?.value ?? '')
+					: input?.value ?? ''
 			}
 			return values
 		}
@@ -1983,9 +2113,46 @@ export function showProductFormModal(rawDefinition) {
 			renderDailyEntries(dailyWrapper, defaults)
 		}
 
+		const autofillWeeklyEndDate = () => {
+			if (touchedFields.has('weekly_period_end')) {
+				return
+			}
+
+			const startInput = overlay.querySelector('[name="weekly_period_start"]')
+			const endInput = overlay.querySelector('[name="weekly_period_end"]')
+			if (!(startInput instanceof HTMLInputElement) || !(endInput instanceof HTMLInputElement) || !/^\d{4}-\d{2}-\d{2}$/.test(startInput.value)) {
+				return
+			}
+
+			const endDate = new Date(`${startInput.value}T00:00:00`)
+			endDate.setDate(endDate.getDate() + 6)
+			endInput.value = `${endDate.getFullYear()}-${String(endDate.getMonth() + 1).padStart(2, '0')}-${String(endDate.getDate()).padStart(2, '0')}`
+		}
+
+		const synchronizeTwoDayDates = (sourceFieldName) => {
+			const pairs = {
+				today_date: 'kajeno_date',
+				kajeno_date: 'today_date',
+				tomorrow_date: 'hosane_date',
+				hosane_date: 'tomorrow_date',
+			}
+			const targetFieldName = pairs[sourceFieldName]
+			if (!targetFieldName || touchedFields.has(targetFieldName)) {
+				return
+			}
+
+			const sourceInput = overlay.querySelector(`[name="${CSS.escape(sourceFieldName)}"]`)
+			const targetInput = overlay.querySelector(`[name="${CSS.escape(targetFieldName)}"]`)
+			if (sourceInput instanceof HTMLInputElement && targetInput instanceof HTMLInputElement) {
+				targetInput.value = sourceInput.value
+			}
+		}
+
 		const validateForm = ({ forceAll = false } = {}) => {
 			const values = collectValues()
 			let hasErrors = false
+			const requiredFields = definition.fields.filter((field) => field.required)
+			let completedRequiredFields = 0
 
 			for (const field of definition.fields) {
 				const error = validateField(field, values[field.name])
@@ -1993,7 +2160,19 @@ export function showProductFormModal(rawDefinition) {
 				setFieldError(field.name, error, shouldShow)
 				if (error) {
 					hasErrors = true
+				} else if (field.required) {
+					completedRequiredFields++
 				}
+			}
+
+			const completionPercent = requiredFields.length > 0
+				? Math.round((completedRequiredFields / requiredFields.length) * 100)
+				: 100
+			if (progressCount) {
+				progressCount.textContent = `${completedRequiredFields} of ${requiredFields.length} complete`
+			}
+			if (progressBar instanceof HTMLElement) {
+				progressBar.style.width = `${completionPercent}%`
 			}
 
 			if (
@@ -2005,6 +2184,19 @@ export function showProductFormModal(rawDefinition) {
 				const shouldShow = forceAll || touchedFields.has('review_period_end') || touchedFields.has('review_period_start')
 				setFieldError('review_period_end', message, shouldShow)
 				hasErrors = true
+			}
+
+			for (const [startName, endName, message] of [
+				['period_start', 'period_end', 'Period end must be on or after period start.'],
+				['weekly_period_start', 'weekly_period_end', 'Weekly period end must be on or after weekly period start.'],
+				['today_date', 'tomorrow_date', 'Tomorrow date must be on or after today date.'],
+				['kajeno_date', 'hosane_date', 'Hosane date must be on or after kajeno date.'],
+			]) {
+				if (values[startName] && values[endName] && values[endName] < values[startName]) {
+					const shouldShow = forceAll || touchedFields.has(startName) || touchedFields.has(endName)
+					setFieldError(endName, message, shouldShow)
+					hasErrors = true
+				}
 			}
 
 			if (definition.type === 'morning' && values.forecast_valid_time_mode === '__custom__') {
@@ -2026,6 +2218,15 @@ export function showProductFormModal(rawDefinition) {
 		}
 
 		for (const field of definition.fields) {
+			if (field.type === 'segmented') {
+				const inputs = Array.from(overlay.querySelectorAll(`[name="${CSS.escape(field.name)}"]`))
+				const defaultInput = inputs.find((input) => input.value === field.default)
+				if (defaultInput instanceof HTMLInputElement) {
+					defaultInput.checked = true
+				}
+				continue
+			}
+
 			if (field.type === 'multiselect') {
 				const wrapper = overlay.querySelector(`[data-multiselect-field="${CSS.escape(field.name)}"]`)
 				if (!wrapper) {
@@ -2170,8 +2371,12 @@ export function showProductFormModal(rawDefinition) {
 				autofillReviewPeriodFromForecast()
 			}
 			if (fieldName === 'weekly_period_start' || fieldName === 'weekly_period_end') {
+				if (fieldName === 'weekly_period_start') {
+					autofillWeeklyEndDate()
+				}
 				autofillWeeklyDailyEntries()
 			}
+			synchronizeTwoDayDates(fieldName)
 
 			updateConditionalFields(overlay)
 
@@ -2204,21 +2409,52 @@ export function showProductFormModal(rawDefinition) {
 
 		validateForm()
 
-		form.addEventListener('submit', (event) => {
+		form.addEventListener('submit', async (event) => {
 			event.preventDefault()
+			formMessage.hidden = true
+			formMessage.textContent = ''
 			for (const field of definition.fields) {
 				touchedFields.add(field.name)
 			}
 
 			const { values, hasErrors } = validateForm({ forceAll: true })
 			if (hasErrors) {
+				const firstInvalidControl = overlay.querySelector('.csis-product-form__field.has-error input, .csis-product-form__field.has-error select, .csis-product-form__field.has-error textarea, .csis-product-form__field.has-error button')
+				if (firstInvalidControl instanceof HTMLElement) {
+					firstInvalidControl.focus()
+					firstInvalidControl.scrollIntoView({ behavior: 'smooth', block: 'center' })
+				}
 				return
 			}
 
 			submitButton.disabled = true
-			submitButton.textContent = 'Generating...'
+			submitButton.textContent = 'Generating…'
 
-			close({ values })
+			try {
+				const result = typeof onSubmit === 'function' ? await onSubmit(values) : null
+				close({ values, result })
+			} catch (error) {
+				const serverErrors = error?.response?.data?.errors || {}
+				for (const [fieldName, message] of Object.entries(serverErrors)) {
+					setFieldError(fieldName, String(message), true)
+				}
+
+				const firstInvalidControl = overlay.querySelector('.csis-product-form__field.has-error input, .csis-product-form__field.has-error select, .csis-product-form__field.has-error textarea, .csis-product-form__field.has-error button')
+				if (firstInvalidControl instanceof HTMLElement) {
+					firstInvalidControl.focus()
+					firstInvalidControl.scrollIntoView({ behavior: 'smooth', block: 'center' })
+				}
+
+				const validationMessage = Object.values(serverErrors)[0]
+				formMessage.textContent = String(
+					validationMessage
+					|| error?.response?.data?.message
+					|| 'The document could not be generated. Review the form and try again.',
+				)
+				formMessage.hidden = false
+				submitButton.disabled = false
+				submitButton.textContent = submitLabel
+			}
 		})
 
 		for (const button of [cancelButton, closeButton, backButton]) {

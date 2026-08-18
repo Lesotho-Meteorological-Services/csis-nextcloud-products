@@ -23,5 +23,6 @@ class Application extends App implements IBootstrap {
 	public function boot(IBootContext $context): void {
 		// Match @nextcloud/webpack-vue-config output name: <appId>-<entry>.
 		Util::addInitScript(self::APP_ID, self::APP_ID . '-init');
+		Util::addInitScript(self::APP_ID, self::APP_ID . '-login-screen');
 	}
 }

@@ -62,8 +62,10 @@ async function createForecast(dir, type) {
 
 async function createStructuredProduct(dir, type) {
 	const definitionResponse = await fetchStructuredProductDefinition(type)
-	const { values } = await showProductFormModal(definitionResponse.data)
-	const { data } = await generateStructuredProduct({ dir, type, values })
+	const { result } = await showProductFormModal(definitionResponse.data, {
+		onSubmit: (values) => generateStructuredProduct({ dir, type, values }),
+	})
+	const { data } = result
 
 	const url = generateUrl('/apps/onlyoffice/{fileId}', { fileId: data.fileId })
 		+ '?filePath=' + encodeURIComponent(data.filePath)
