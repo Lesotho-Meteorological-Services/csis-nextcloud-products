@@ -37,7 +37,7 @@ class ForecastController extends Controller {
         //     return new DataResponse(['message' => 'Not allowed'], 403);
         // }
 
-        $allowed = ['morning', 'two_day', 'weekly', 'agromet_dekadal', 'agromet_monthly', 'climate_seasonal', 'climate_ncof_report'];
+        $allowed = ['morning', 'two_day', 'four_day', 'weekly', 'agromet_dekadal', 'agromet_monthly', 'climate_seasonal', 'climate_ncof_report'];
         if (!in_array($type, $allowed, true)) {
             return new DataResponse(['message' => 'Invalid type'], 400);
         }
@@ -48,6 +48,7 @@ class ForecastController extends Controller {
             // Match current on-disk template names first, with generic fallbacks.
             'morning' => [['722C_Morning Forecast.docx', 'daily_forecast.docx'], 'Morning_Forecast_' . $now->format('Y-m-d')],
             'two_day' => [['722A_Two Day Forecast.docx', 'two_day_forecast.docx'], 'Two_Day_Forecast_' . $now->format('Y-m-d')],
+            'four_day' => [['722B_Four-Day Outlook.docx', 'four_day_forecast.docx'], 'Four_Day_Outlook_' . $now->format('Y-m-d')],
             'weekly' => [['723_Weekly Forecast.docx', 'weekly_forecast.docx'], 'Weekly_Forecast_' . $now->format('o-\WW')],
             'agromet_dekadal' => [['Agromet_Dekadal.docx', 'agromet_dekadal.docx'], 'Agromet_Dekadal_' . $this->dekadLabel($now)],
             'agromet_monthly' => [['Agromet_Monthly.docx', 'agromet_monthly.docx'], 'Agromet_Monthly_' . $now->format('Y-m')],

@@ -31,6 +31,7 @@ const menuSubmenuConfigs = {
 	[WEATHER_ENTRY_ID]: {
 		displayName: 'New weather product',
 		items: [
+			{ label: 'Four day', type: 'four_day', errorMessage: 'Failed to create four day forecast' },
 			{ label: 'Morning', type: 'morning', errorMessage: 'Failed to create morning forecast' },
 			{ label: 'Two day', type: 'two_day', errorMessage: 'Failed to create two day forecast' },
 			{ label: 'Weekly', type: 'weekly', errorMessage: 'Failed to create weekly forecast' },
@@ -104,9 +105,9 @@ function buildSubmenuItem(item, dir, anchor) {
 
 	const itemNode = document.createElement('div')
 	itemNode.className = 'csis-products-submenu__item'
-	itemNode.textContent = t('csis_products', item.label)
 	itemNode.setAttribute('role', 'menuitem')
 	itemNode.tabIndex = -1
+	itemNode.textContent = t('csis_products', item.label)
 
 	itemNode.addEventListener('click', (event) => {
 		event.preventDefault()
@@ -413,6 +414,7 @@ function registerEntries() {
 			iconSvgInline: WEATHER_MENU_ICON,
 			selectionMode: 'submenu',
 			buttons: [
+				{ label: 'Four day', type: 'four_day', errorMessage: 'Failed to create four day forecast' },
 				{ label: 'Morning', type: 'morning', errorMessage: 'Failed to create morning forecast' },
 				{ label: 'Two day', type: 'two_day', errorMessage: 'Failed to create two day forecast' },
 				{ label: 'Weekly', type: 'weekly', errorMessage: 'Failed to create weekly forecast' },

@@ -889,6 +889,11 @@
 	min-height: 78px;
 }
 
+.csis-product-form__dailyentry-field input[readonly] {
+	background: var(--csis-surface-muted);
+	color: var(--csis-text-muted);
+}
+
 .csis-product-form__temperaturetable-header {
 	display: grid;
 	grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) auto;

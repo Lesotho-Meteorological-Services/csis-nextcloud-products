@@ -11,7 +11,7 @@ class DocxTemplateService {
 	public function render(string $templatePath, array $placeholders, array $context = []): string {
 		$workingTemplatePath = $templatePath;
 		$tempTemplateDir = null;
-		if (in_array(($context['type'] ?? null), ['morning', 'weekly'], true) && !$this->isZipBasedDocx($templatePath)) {
+		if (in_array(($context['type'] ?? null), ['morning', 'four_day', 'weekly'], true) && !$this->isZipBasedDocx($templatePath)) {
 			[$workingTemplatePath, $tempTemplateDir] = $this->convertLegacyWordTemplate($templatePath);
 		}
 
@@ -92,6 +92,7 @@ class DocxTemplateService {
 				if ($normalizedEntryName === 'word/document.xml') {
 					$content = $this->prepareMorningForecastDocument($content, $placeholders, $context);
 					$content = $this->prepareTwoDayForecastDocument($content, $placeholders, $context);
+					$content = $this->prepareFourDayForecastDocument($content, $placeholders, $context);
 					$content = $this->prepareWeeklyForecastDocument($content, $placeholders, $context);
 					$content = $this->prepareNcofReportDocument($content, $placeholders, $context);
 				}
@@ -270,6 +271,108 @@ class DocxTemplateService {
 		$temperatureRows = $context['values']['temperature_table'] ?? [];
 		if (is_array($temperatureRows) && $temperatureRows !== []) {
 			$this->replaceTwoDayTemperatureTable($dom, $xpath, $temperatureRows);
+		}
+
+		return $dom->saveXML() ?: $xml;
+	}
+
+	private function prepareFourDayForecastDocument(string $xml, array $placeholders, array $context): string {
+		if (($context['type'] ?? null) !== 'four_day') {
+			return $xml;
+		}
+
+		$dom = new \DOMDocument('1.0', 'UTF-8');
+		$dom->preserveWhiteSpace = true;
+		$dom->formatOutput = false;
+		if (@$dom->loadXML($xml) === false) {
+			return $xml;
+		}
+
+		$xpath = new \DOMXPath($dom);
+		$xpath->registerNamespace('w', 'http://schemas.openxmlformats.org/wordprocessingml/2006/main');
+
+		$paragraphs = [];
+		foreach ($xpath->query('//w:body//w:p') as $paragraphNode) {
+			if ($paragraphNode instanceof \DOMElement) {
+				$paragraphs[] = $paragraphNode;
+			}
+		}
+
+		$titleIndex = $this->findParagraphIndex($xpath, $paragraphs, 'FOUR-DAY OUTLOOK');
+		if ($titleIndex === null) {
+			return $xml;
+		}
+
+		$periodIndex = $this->findNextNonEmptyParagraphIndex($xpath, $paragraphs, $titleIndex + 1);
+		if ($periodIndex !== null) {
+			$this->setOrdinalParagraphText($dom, $xpath, $paragraphs[$periodIndex], (string)($placeholders['four_day_period_display'] ?? ''));
+		}
+
+		/** @var array<int, array{date?: string, display_label?: string, daily_description?: string, wind_description?: string}> $entries */
+		$entries = is_array($context['values']['daily_entries'] ?? null) ? $context['values']['daily_entries'] : [];
+		if ($entries === [] || $periodIndex === null) {
+			return $dom->saveXML() ?: $xml;
+		}
+
+		$firstDayIndex = null;
+		for ($index = $periodIndex + 1; $index < count($paragraphs); $index++) {
+			$text = $this->paragraphText($xpath, $paragraphs[$index]);
+			if (preg_match('/^(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\s+\d{1,2}(st|nd|rd|th)$/', $text) === 1) {
+				$firstDayIndex = $index;
+				break;
+			}
+		}
+
+		if ($firstDayIndex === null) {
+			return $dom->saveXML() ?: $xml;
+		}
+
+		[$dailyTriplets, $referenceNode] = $this->collectWeeklyDailyTriplets($xpath, $paragraphs, $firstDayIndex);
+		if ($dailyTriplets === []) {
+			return $dom->saveXML() ?: $xml;
+		}
+
+		$headingTemplate = $dailyTriplets[0][0];
+		$bodyTemplate = $dailyTriplets[0][1];
+		$windTemplate = $dailyTriplets[0][2];
+		$parent = ($referenceNode instanceof \DOMNode)
+			? $referenceNode->parentNode
+			: $headingTemplate->parentNode;
+		if (!($parent instanceof \DOMNode)) {
+			return $dom->saveXML() ?: $xml;
+		}
+
+		foreach ($entries as $index => $entry) {
+			if (isset($dailyTriplets[$index])) {
+				[$headingParagraph, $bodyParagraph, $windParagraph] = $dailyTriplets[$index];
+			} else {
+				$headingParagraph = $headingTemplate->cloneNode(true);
+				$bodyParagraph = $bodyTemplate->cloneNode(true);
+				$windParagraph = $windTemplate->cloneNode(true);
+				if (!($headingParagraph instanceof \DOMElement) || !($bodyParagraph instanceof \DOMElement) || !($windParagraph instanceof \DOMElement)) {
+					continue;
+				}
+
+				if ($referenceNode instanceof \DOMNode) {
+					$parent->insertBefore($headingParagraph, $referenceNode);
+					$parent->insertBefore($bodyParagraph, $referenceNode);
+					$parent->insertBefore($windParagraph, $referenceNode);
+				} else {
+					$parent->appendChild($headingParagraph);
+					$parent->appendChild($bodyParagraph);
+					$parent->appendChild($windParagraph);
+				}
+			}
+
+			$this->setOrdinalParagraphText($dom, $xpath, $headingParagraph, $this->resolveWeeklyHeadingLabel($entry));
+			$this->setParagraphText($dom, $xpath, $bodyParagraph, (string)($entry['daily_description'] ?? ''));
+			$this->setLabeledParagraphText($dom, $xpath, $windParagraph, 'Wind:', (string)($entry['wind_description'] ?? ''));
+		}
+
+		for ($index = count($entries); $index < count($dailyTriplets); $index++) {
+			foreach ($dailyTriplets[$index] as $paragraph) {
+				$paragraph->parentNode?->removeChild($paragraph);
+			}
 		}
 
 		return $dom->saveXML() ?: $xml;
@@ -907,6 +1010,69 @@ class DocxTemplateService {
 		}
 
 		$paragraph->appendChild($newRun);
+	}
+
+	private function setOrdinalParagraphText(\DOMDocument $dom, \DOMXPath $xpath, \DOMElement $paragraph, string $text): void {
+		$this->setParagraphText($dom, $xpath, $paragraph, $text);
+
+		$referenceRun = $xpath->query('./w:r', $paragraph)->item(0);
+		if (!($referenceRun instanceof \DOMElement)) {
+			return;
+		}
+
+		$runProperties = $xpath->query('./w:rPr', $referenceRun)->item(0);
+		$baseRunProperties = $runProperties instanceof \DOMElement
+			? $runProperties->cloneNode(true)
+			: null;
+		$paragraph->removeChild($referenceRun);
+
+		$appendRun = function (string $value, bool $superscript) use ($dom, $xpath, $paragraph, $baseRunProperties): void {
+			if ($value === '') {
+				return;
+			}
+
+			$run = $dom->createElementNS('http://schemas.openxmlformats.org/wordprocessingml/2006/main', 'w:r');
+			$properties = $baseRunProperties instanceof \DOMNode
+				? $baseRunProperties->cloneNode(true)
+				: $dom->createElementNS('http://schemas.openxmlformats.org/wordprocessingml/2006/main', 'w:rPr');
+			if ($properties instanceof \DOMElement) {
+				foreach ($xpath->query('./w:vertAlign', $properties) as $verticalAlignment) {
+					$properties->removeChild($verticalAlignment);
+				}
+				if ($superscript) {
+					$verticalAlignment = $dom->createElementNS('http://schemas.openxmlformats.org/wordprocessingml/2006/main', 'w:vertAlign');
+					$verticalAlignment->setAttributeNS('http://schemas.openxmlformats.org/wordprocessingml/2006/main', 'w:val', 'superscript');
+					$properties->appendChild($verticalAlignment);
+				}
+				$run->appendChild($properties);
+			}
+
+			$textNode = $dom->createElementNS('http://schemas.openxmlformats.org/wordprocessingml/2006/main', 'w:t');
+			if ($value !== trim($value)) {
+				$textNode->setAttributeNS('http://www.w3.org/XML/1998/namespace', 'xml:space', 'preserve');
+			}
+			$textNode->appendChild($dom->createTextNode($value));
+			$run->appendChild($textNode);
+			$paragraph->appendChild($run);
+		};
+
+		$cursor = 0;
+		if (preg_match_all('/\d{1,2}(st|nd|rd|th)/i', $text, $matches, PREG_OFFSET_CAPTURE) === false) {
+			$appendRun($text, false);
+			return;
+		}
+
+		foreach ($matches[0] as $match) {
+			$ordinal = (string)$match[0];
+			$offset = (int)$match[1];
+			$suffix = substr($ordinal, -2);
+			$number = substr($ordinal, 0, -2);
+			$appendRun(substr($text, $cursor, $offset - $cursor) . $number, false);
+			$appendRun($suffix, true);
+			$cursor = $offset + strlen($ordinal);
+		}
+
+		$appendRun(substr($text, $cursor), false);
 	}
 
 	private function setTwoDayNarrativeParagraphText(\DOMDocument $dom, \DOMXPath $xpath, \DOMElement $paragraph, string $labelText, string $bodyText): void {

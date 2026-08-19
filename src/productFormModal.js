@@ -47,6 +47,7 @@ const PRODUCT_ACTION_LABELS = {
 const PRODUCT_SUBTITLES = {
 	morning: 'Create the morning forecast and expected maximum temperatures.',
 	two_day: 'Create the bilingual two-day forecast and station temperatures.',
+	four_day: 'Create a four day outlook with four consecutive daily weather and wind entries.',
 	weekly: 'Create the weekly outlook with one structured entry per day.',
 	agromet_dekadal: 'Create a dekadal agrometeorological bulletin.',
 	climate_seasonal: 'Create a seasonal climate outlook for the selected forecast period.',
@@ -626,20 +627,23 @@ function createFieldMarkup(field) {
 	}
 
 	if (field.type === 'dailyentries') {
+		const lockRows = field.lockRows === true
 		return `
 			<fieldset
 				class="${fieldClasses.join(' ')} csis-product-form__fieldset"
 				data-field="${escapeHtml(field.name)}"
 				data-dailyentries-field="${escapeHtml(field.name)}"
+				data-lock-rows="${lockRows ? 'true' : 'false'}"
+				data-lock-dates="${field.lockDates === true ? 'true' : 'false'}"
 			>
 				<legend class="csis-product-form__label">${escapeHtml(field.label)} ${requiredMarker}</legend>
 				<div class="csis-product-form__dailyentries-shell">
 					<div class="csis-product-form__dailyentries-values" data-dailyentries-values></div>
-					<div class="csis-product-form__dailyentries-actions">
+					${lockRows ? '' : `<div class="csis-product-form__dailyentries-actions">
 						<button type="button" class="csis-product-form__temperaturetable-add" data-dailyentries-add>
 							Add day
 						</button>
-					</div>
+					</div>`}
 				</div>
 				<input type="hidden" data-dailyentries-empty-text value="${escapeHtml(field.emptyText || 'No daily forecast entries added yet.')}">
 				${helpText}
@@ -801,6 +805,10 @@ function validateField(field, value) {
 
 		if (!hasCompletedEntry) {
 			return field.required ? `${field.label} is required.` : ''
+		}
+
+		if (Number(field.exactEntries || 0) > 0 && value.length !== Number(field.exactEntries)) {
+			return `${field.label} must contain exactly ${field.exactEntries} complete entries.`
 		}
 
 		return ''
@@ -1627,18 +1635,21 @@ function renderDailyEntries(wrapper, entries) {
 		return
 	}
 
+	const lockRows = wrapper.dataset.lockRows === 'true'
+	const lockDates = wrapper.dataset.lockDates === 'true'
+
 	container.innerHTML = entries.map((entry, index) => `
 		<div class="csis-product-form__dailyentry-card" data-dailyentry-item data-row-index="${index}">
 			<div class="csis-product-form__dailyentry-header">
 				<h4 class="csis-product-form__dailyentry-title">${escapeHtml(formatWeeklyEntryHeading(entry.date))}</h4>
-				<button type="button" class="csis-product-form__driver-remove" data-dailyentry-remove aria-label="Remove day ${index + 1}">
+				${lockRows ? '' : `<button type="button" class="csis-product-form__driver-remove" data-dailyentry-remove aria-label="Remove day ${index + 1}">
 					&times;
-				</button>
+				</button>`}
 			</div>
 			<div class="csis-product-form__dailyentry-grid">
 				<label class="csis-product-form__dailyentry-field">
 					<span class="csis-product-form__temperaturetable-label">Date</span>
-					<input type="date" data-dailyentry-date value="${escapeHtml(entry.date || '')}">
+					<input type="date" data-dailyentry-date value="${escapeHtml(entry.date || '')}" ${lockDates ? 'readonly aria-readonly="true"' : ''}>
 				</label>
 				<label class="csis-product-form__dailyentry-field csis-product-form__dailyentry-field--full">
 					<span class="csis-product-form__temperaturetable-label">Daily description</span>
@@ -2019,39 +2030,71 @@ export function showProductFormModal(rawDefinition, { onSubmit = null } = {}) {
 			isAutofillingReviewPeriod = false
 		}
 
-		const autofillWeeklyDailyEntries = () => {
-			const dailyWrapper = overlay.querySelector('[data-dailyentries-field="daily_entries"]')
-			if (!(dailyWrapper instanceof HTMLElement) || dailyWrapper.dataset.userModified === 'true') {
+		const dailyEntryPeriod = definition.type === 'four_day'
+			? {
+				startName: 'four_day_period_start',
+				endName: 'four_day_period_end',
+				durationDays: 4,
+				preserveEntryContent: true,
+			}
+			: definition.type === 'weekly'
+				? {
+					startName: 'weekly_period_start',
+					endName: 'weekly_period_end',
+					durationDays: 7,
+					preserveEntryContent: false,
+				}
+				: null
+
+		const autofillForecastDailyEntries = () => {
+			if (!dailyEntryPeriod) {
 				return
 			}
 
-			const startInput = overlay.querySelector('[name="weekly_period_start"]')
-			const endInput = overlay.querySelector('[name="weekly_period_end"]')
+			const dailyWrapper = overlay.querySelector('[data-dailyentries-field="daily_entries"]')
+			if (
+				!(dailyWrapper instanceof HTMLElement)
+				|| (dailyWrapper.dataset.userModified === 'true' && !dailyEntryPeriod.preserveEntryContent)
+			) {
+				return
+			}
+
+			const startInput = overlay.querySelector(`[name="${CSS.escape(dailyEntryPeriod.startName)}"]`)
+			const endInput = overlay.querySelector(`[name="${CSS.escape(dailyEntryPeriod.endName)}"]`)
 			if (!(startInput instanceof HTMLInputElement) || !(endInput instanceof HTMLInputElement)) {
 				return
 			}
 
 			const defaults = buildWeeklyEntryDefaults(startInput.value, endInput.value)
-			if (!defaults || defaults.length === 0) {
+			if (!defaults || defaults.length !== dailyEntryPeriod.durationDays) {
 				return
 			}
 
-			renderDailyEntries(dailyWrapper, defaults)
+			const existingEntries = dailyEntryPeriod.preserveEntryContent
+				? getDailyEntries(dailyWrapper)
+				: []
+			const nextEntries = defaults.map((entry, index) => ({
+				...entry,
+				daily_description: existingEntries[index]?.daily_description || '',
+				wind_description: existingEntries[index]?.wind_description || '',
+			}))
+
+			renderDailyEntries(dailyWrapper, nextEntries)
 		}
 
-		const autofillWeeklyEndDate = () => {
-			if (touchedFields.has('weekly_period_end')) {
+		const autofillForecastEndDate = () => {
+			if (!dailyEntryPeriod || touchedFields.has(dailyEntryPeriod.endName)) {
 				return
 			}
 
-			const startInput = overlay.querySelector('[name="weekly_period_start"]')
-			const endInput = overlay.querySelector('[name="weekly_period_end"]')
+			const startInput = overlay.querySelector(`[name="${CSS.escape(dailyEntryPeriod.startName)}"]`)
+			const endInput = overlay.querySelector(`[name="${CSS.escape(dailyEntryPeriod.endName)}"]`)
 			if (!(startInput instanceof HTMLInputElement) || !(endInput instanceof HTMLInputElement) || !/^\d{4}-\d{2}-\d{2}$/.test(startInput.value)) {
 				return
 			}
 
 			const endDate = new Date(`${startInput.value}T00:00:00`)
-			endDate.setDate(endDate.getDate() + 6)
+			endDate.setDate(endDate.getDate() + dailyEntryPeriod.durationDays - 1)
 			endInput.value = `${endDate.getFullYear()}-${String(endDate.getMonth() + 1).padStart(2, '0')}-${String(endDate.getDate()).padStart(2, '0')}`
 		}
 
@@ -2114,6 +2157,7 @@ export function showProductFormModal(rawDefinition, { onSubmit = null } = {}) {
 
 			for (const [startName, endName, message] of [
 				['period_start', 'period_end', 'Period end must be on or after period start.'],
+				['four_day_period_start', 'four_day_period_end', 'Four day outlook end must be on or after outlook start.'],
 				['weekly_period_start', 'weekly_period_end', 'Weekly period end must be on or after weekly period start.'],
 				['today_date', 'tomorrow_date', 'Tomorrow date must be on or after today date.'],
 				['kajeno_date', 'hosane_date', 'Hosane date must be on or after kajeno date.'],
@@ -2260,7 +2304,7 @@ export function showProductFormModal(rawDefinition, { onSubmit = null } = {}) {
 
 		updateConditionalFields(overlay)
 		autofillReviewPeriodFromForecast()
-		autofillWeeklyDailyEntries()
+		autofillForecastDailyEntries()
 
 		const markTouched = (fieldName) => {
 			if (fieldName) {
@@ -2296,11 +2340,11 @@ export function showProductFormModal(rawDefinition, { onSubmit = null } = {}) {
 			if (fieldName === 'forecast_season' || fieldName === 'forecast_year') {
 				autofillReviewPeriodFromForecast()
 			}
-			if (fieldName === 'weekly_period_start' || fieldName === 'weekly_period_end') {
-				if (fieldName === 'weekly_period_start') {
-					autofillWeeklyEndDate()
+			if (dailyEntryPeriod && (fieldName === dailyEntryPeriod.startName || fieldName === dailyEntryPeriod.endName)) {
+				if (fieldName === dailyEntryPeriod.startName) {
+					autofillForecastEndDate()
 				}
-				autofillWeeklyDailyEntries()
+				autofillForecastDailyEntries()
 			}
 			synchronizeTwoDayDates(fieldName)
 

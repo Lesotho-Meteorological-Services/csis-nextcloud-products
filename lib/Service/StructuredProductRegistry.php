@@ -134,7 +134,16 @@ class StructuredProductRegistry {
 		$todayDate = new \DateTimeImmutable('today');
 		$today = $todayDate->format('Y-m-d');
 		$tomorrow = $todayDate->modify('+1 day')->format('Y-m-d');
+		$fourDayEnd = $todayDate->modify('+3 days')->format('Y-m-d');
 		$weekEnd = $todayDate->modify('+6 days')->format('Y-m-d');
+		$fourDayEntries = [];
+		for ($dayOffset = 0; $dayOffset < 4; $dayOffset++) {
+			$fourDayEntries[] = [
+				'date' => $todayDate->modify(sprintf('+%d days', $dayOffset))->format('Y-m-d'),
+				'daily_description' => '',
+				'wind_description' => '',
+			];
+		}
 		$currentYear = (int)$todayDate->format('Y');
 		$currentMonth = (int)$todayDate->format('n');
 		$currentSeason = $currentMonth >= 7
@@ -522,6 +531,73 @@ class StructuredProductRegistry {
 						'description' => 'Review and enter the forecast temperatures for each station row.',
 						'layout' => 'stack',
 						'fields' => ['temperature_table'],
+					],
+				],
+			],
+			'four_day' => [
+				'type' => 'four_day',
+				'category' => 'weather',
+				'label' => 'Four Day Weather Outlook',
+				'subtitle' => 'Complete the required fields to generate the four day weather outlook.',
+				'modalWidth' => 720,
+				'template' => '722B_Four-Day Outlook.docx',
+				'placeholders' => [
+					'four_day_period_display',
+				],
+				'fields' => [
+					[
+						'name' => 'issue_date',
+						'label' => 'Issue date',
+						'type' => 'date',
+						'required' => true,
+						'default' => $today,
+						'readOnly' => true,
+						'helperText' => 'Auto-filled with today\'s issue date.',
+					],
+					[
+						'name' => 'four_day_period_start',
+						'label' => 'Outlook period start',
+						'type' => 'date',
+						'required' => true,
+						'default' => $today,
+						'helperText' => 'Choose the first day of the four day outlook.',
+					],
+					[
+						'name' => 'four_day_period_end',
+						'label' => 'Outlook period end',
+						'type' => 'date',
+						'required' => true,
+						'default' => $fourDayEnd,
+						'readOnly' => true,
+						'helperText' => 'Calculated automatically as the fourth consecutive outlook day.',
+					],
+					[
+						'name' => 'daily_entries',
+						'label' => 'Four day forecast entries',
+						'type' => 'dailyentries',
+						'required' => true,
+						'exactEntries' => 4,
+						'lockRows' => true,
+						'lockDates' => true,
+						'helperText' => 'Complete the forecast and wind description for each of the four consecutive days.',
+						'emptyText' => 'Four daily forecast entries are required.',
+						'default' => $fourDayEntries,
+					],
+				],
+				'sections' => [
+					[
+						'id' => 'identity',
+						'title' => 'Document identity',
+						'description' => 'Set the issue date and the first day of the four day outlook period.',
+						'layout' => 'grid',
+						'fields' => ['issue_date', 'four_day_period_start', 'four_day_period_end'],
+					],
+					[
+						'id' => 'daily',
+						'title' => 'Four day outlook',
+						'description' => 'Provide the daily weather narrative and wind conditions shown in the outlook.',
+						'layout' => 'stack',
+						'fields' => ['daily_entries'],
 					],
 				],
 			],
@@ -1015,6 +1091,11 @@ class StructuredProductRegistry {
 					}
 				}
 
+				$exactEntries = (int)($field['exactEntries'] ?? 0);
+				if ($exactEntries > 0 && count($completedEntries) !== $exactEntries) {
+					$errors[$name] = sprintf('%s must contain exactly %d complete entries.', $field['label'], $exactEntries);
+				}
+
 				$values[$name] = $completedEntries;
 				continue;
 			}
@@ -1087,6 +1168,29 @@ class StructuredProductRegistry {
 			$errors['weekly_period_end'] = 'Weekly period end must be on or after weekly period start.';
 		}
 
+		$fourDayStart = $values['four_day_period_start'] ?? null;
+		$fourDayEnd = $values['four_day_period_end'] ?? null;
+		if (is_string($fourDayStart) && is_string($fourDayEnd) && $fourDayStart !== '' && $fourDayEnd !== '') {
+			try {
+				$startDate = new \DateTimeImmutable($fourDayStart);
+				$expectedEnd = $startDate->modify('+3 days')->format('Y-m-d');
+				if ($fourDayEnd !== $expectedEnd) {
+					$errors['four_day_period_end'] = 'Four day outlook end must be exactly three days after the start.';
+				}
+
+				$entries = is_array($values['daily_entries'] ?? null) ? $values['daily_entries'] : [];
+				foreach (array_values($entries) as $index => $entry) {
+					$expectedDate = $startDate->modify(sprintf('+%d days', $index))->format('Y-m-d');
+					if (($entry['date'] ?? '') !== $expectedDate) {
+						$errors['daily_entries'] = 'Four day forecast entries must match the four consecutive outlook dates.';
+						break;
+					}
+				}
+			} catch (\Throwable) {
+				$errors['four_day_period_end'] = 'Four day outlook period must contain valid dates.';
+			}
+		}
+
 		$todayDate = $values['today_date'] ?? null;
 		$tomorrowDate = $values['tomorrow_date'] ?? null;
 		if (is_string($todayDate) && is_string($tomorrowDate) && $todayDate !== '' && $tomorrowDate !== '' && $todayDate > $tomorrowDate) {
@@ -1125,6 +1229,17 @@ class StructuredProductRegistry {
 
 		if (($definition['type'] ?? '') === 'two_day') {
 			$values['document_title'] = 'Two Day Forecast';
+		}
+
+		if (($definition['type'] ?? '') === 'four_day') {
+			$values['document_title'] = 'FOUR-DAY OUTLOOK';
+			$values['four_day_period_display'] = $this->buildWeeklyPeriodDisplay(
+				(string)($values['four_day_period_start'] ?? ''),
+				(string)($values['four_day_period_end'] ?? ''),
+			);
+			$values['daily_entries'] = $this->buildWeeklyEntryDisplays(
+				is_array($values['daily_entries'] ?? null) ? $values['daily_entries'] : [],
+			);
 		}
 
 		if (($definition['type'] ?? '') === 'weekly') {
@@ -1172,6 +1287,12 @@ class StructuredProductRegistry {
 					'kajeno_description_sesotho' => (string)($values['kajeno_description_sesotho'] ?? ''),
 					'hosane_date' => $this->formatSlashDate((string)($values['hosane_date'] ?? '')),
 					'hosane_description_sesotho' => (string)($values['hosane_description_sesotho'] ?? ''),
+				];
+			}
+
+			if ($type === 'four_day') {
+				return [
+					'four_day_period_display' => (string)($values['four_day_period_display'] ?? ''),
 				];
 			}
 
@@ -1252,6 +1373,12 @@ class StructuredProductRegistry {
 		if ($type === 'two_day') {
 			$issueDate = $this->slugify((string)($values['issue_date'] ?? ''));
 			return trim(sprintf('Two_Day_Forecast_%s', $issueDate !== '' ? $issueDate : 'undated'), '_');
+		}
+
+		if ($type === 'four_day') {
+			$periodStart = $this->slugify((string)($values['four_day_period_start'] ?? ''));
+			$periodEnd = $this->slugify((string)($values['four_day_period_end'] ?? ''));
+			return trim(sprintf('Four_Day_Outlook_%s_%s', $periodStart !== '' ? $periodStart : 'start', $periodEnd !== '' ? $periodEnd : 'end'), '_');
 		}
 
 		if ($type === 'weekly') {
